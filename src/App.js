@@ -1,17 +1,20 @@
 import './App.css';
-import Button from './components/styled/Button'
+import Header from './blocs/1_top/Header'
+import Calendar from './components/Calendar'
 
-const theme = {
-  color: '#0F4C81',
-  background: '#ffff'
-}
+import Footer from './blocs/3_bot/Footer'
+import Mid from './blocs/2_mid/Mid'
+import PlaceFinder from './blocs/2_mid/PlaceFinder'
 
 function App() {
   return (
-    <div className="App">Hello World
-      <Button primary>Sing up</Button>
-      <Button>Find place</Button>
-    </div>
+    <>
+    <Header/>
+    <PlaceFinder/>
+    <Calendar/>
+    <Mid/>
+    <Footer/>
+    </>
   );
 }
 
