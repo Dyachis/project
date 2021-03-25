@@ -8,13 +8,13 @@ export default function PC(){
                 <h2>New York</h2>
             </div>
             <div className="PopularCities__city">
-                <h2>New York</h2>
+                <h2>Rome</h2>
             </div>
             <div className="PopularCities__city">
-                <h2>New York</h2>
+                <h2>Los Angeles</h2>
             </div>
             <div className="PopularCities__city">
-                <h2>New York</h2>
+                <h2>Tel Aviv</h2>
             </div>
         </div>
     </PopularCitiesContainer>

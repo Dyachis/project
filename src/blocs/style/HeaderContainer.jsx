@@ -18,18 +18,27 @@ const Header = styled.div`
         height: 100%;
         width: 100%;
     }
+
+    .header__menu{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
     .header__menu ul {
         display: flex;
         align-items: center;
     }
 
+    .header__menu ul h3{
+        margin-left: 10px;
+    }
+
     .header__menu li {
         margin-left: 20px;
-        opacity: 1;
-        animation-duration: 1s;
     }
 
     .header__menu .palki {
+        top: -10px;
         margin-top: 2px;
         margin-right: -4px;
         height: 15px;

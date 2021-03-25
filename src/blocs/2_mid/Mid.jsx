@@ -1,15 +1,26 @@
-import { useRef } from 'react'
+import { Switch, Route, Redirect} from 'react-router-dom'
+
+import Contact from './emptyPages/Contact'
+import Faq from './emptyPages/Faq'
+
 import Mid from '../style/Mid'
-import ViewPage from './Spring'
+import Spring from './Spring'
+import PlaceFinder from './PlaceFinder'
+import Calendar from '../../components/Calendar'
 
 export default function Md(){
 
-    const q = useRef()
-
     return <Mid>
-        <ViewPage/>
-        <h1 ref={q}>HUI</h1>
-        <h1><button onClick={()=> console.log(q)}>Penis</button></h1>
+        <Switch>
+            <Route path='/home'>
+                <PlaceFinder/>
+                <Spring/>
+                <Calendar/>
+            </Route>
+            <Route path='/contact' component={Contact}/>
+            <Route path='/faq' component={Faq}/>
+            <Redirect from='**' to='/home'/>
+        </Switch>
     </Mid>
     
 }

@@ -5,6 +5,7 @@ const Footer = styled.div`
     max-width: 1920px;
     padding: 40px 277px;
     background: ${color.main};
+    
 
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;

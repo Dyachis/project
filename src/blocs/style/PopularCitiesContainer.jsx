@@ -7,7 +7,6 @@ import tel_aviv from '../../assets/img/tel_aviv.png'
 
 const PopularCitiesContainer = styled.div`
     padding: 60px 277px ;
-    text-align: center;
 
     h1{
         color: ${color.main};
@@ -23,6 +22,9 @@ const PopularCitiesContainer = styled.div`
         height: 250px;
         border-radius: 5px;
         margin-top: 60px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column-reverse;
     }
 
     .PopularCities__city:nth-child(1){

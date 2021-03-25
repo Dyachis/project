@@ -19,14 +19,14 @@ export default function T(){
 
         <Transition 
             items={isVisible}
-            enter={{opacity: 1, transform: 'translateY(0)'}}
-            leave={{opacity: 0, transform: 'translateY(-4rem)'}}
-            from={{opacity: 0, transform: 'translateY(-4rem)'}}
+            enter={{opacity: 1, transform: 'translateY(0)', height: '200px'}}
+            leave={{opacity: 0, transform: 'translateY(-4rem)', height: '0px'}}
+            from={{opacity: 0, transform: 'translateY(-4rem)', height: '0px'}}
             >
             {item => item && (props => (
             <h1 style={props}>Hui Transition</h1>
             ))
-        }
+            }
         </Transition>
     </div>
 }

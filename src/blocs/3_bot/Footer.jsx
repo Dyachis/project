@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import FooterContainer from '../style/FooterContainer';
 import Input from '../style/InptForm';
 import twitter from '../../assets/svg/twitter.svg';
@@ -23,8 +25,8 @@ function Footer() {
             </div>
             <div>
                 <ul>
-                    <li>Contact</li>
-                    <li>FAQ</li>
+                    <li><Link to='/contact'>Contact</Link></li>
+                    <li><Link to='/faq'>FAQ</Link></li>
                     <li>Rent House</li>
                     <li>Find place</li>
                     <li>Company</li>
