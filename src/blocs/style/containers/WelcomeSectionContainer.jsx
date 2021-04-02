@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import background from '../../assets/img/background.png'
+import background from '../../../assets/img/background.png'
 
-const PlaceFinderContainer = styled.div`
-    height: 540px;
+const WelcomeSection = styled.div`
+    height: 100%;
     background-image: url(${background});
     background-size: cover;
     background-position: center;
@@ -45,4 +45,4 @@ const PlaceFinderContainer = styled.div`
     }
 `
 
-export default PlaceFinderContainer
+export default WelcomeSection

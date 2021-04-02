@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import color from '../../assets/color/color'
+import color from '../../../assets/color/color'
 
 const Footer = styled.div`
     max-width: 1920px;

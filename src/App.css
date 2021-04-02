@@ -54,3 +54,11 @@ h4{
   color: #0F4C81;
   padding: 0 277px;
 }
+
+.blured{
+  backdrop-filter: blur(5px);
+}
+
+.qwert{
+  background-color: orange;
+}

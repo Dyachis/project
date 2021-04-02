@@ -1,14 +1,16 @@
 import styled from 'styled-components'
-import color from '../../assets/color/color'
-import nyc from '../../assets/img/nyc.png'
-import rome from '../../assets/img/rome.png'
-import san_francisco from '../../assets/img/san_francisco.png'
-import tel_aviv from '../../assets/img/tel_aviv.png'
+import color from '../../../assets/color/color'
+import nyc from '../../../assets/img/nyc.png'
+import rome from '../../../assets/img/rome.png'
+import san_francisco from '../../../assets/img/san_francisco.png'
+import tel_aviv from '../../../assets/img/tel_aviv.png'
 
 const PopularCitiesContainer = styled.div`
-    padding: 60px 277px ;
+    padding: 60px 0 ;
+    cursor: pointer;
 
     h1{
+        text-align: center;
         color: ${color.main};
     }
 

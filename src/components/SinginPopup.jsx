@@ -1,11 +1,16 @@
-import SinginPopupContainer from '../blocs/style/SinginPopupContainer'
+import SinginPopupContainer from '../blocs/style/containers/SinginPopupContainer'
 import Button from '../blocs/style/Button'
 
-export default function Popup({changePopup}){
+export default function SinginPopup({changePopup, toggleBlur}){
+
+    function close(){
+        changePopup()
+        toggleBlur()
+    }
+
     return <SinginPopupContainer>
-        <div className="blur">HUI</div>
         <div className="popup">
-        <div className="x" onClick={() => changePopup()}>
+        <div className="x" onClick={() => close()}>
             <div></div>
             <div></div>
         </div>
@@ -16,7 +21,9 @@ export default function Popup({changePopup}){
                     <input placeholder="Your name"/>
                     <input placeholder="Your name"/>
                     <div className='btns'>
-                        <Button onClick={() => changePopup()}>Cancel</Button>
+                        <Button onClick={() => close()}>
+                            Cancel
+                        </Button>
                         <Button primary>Next step</Button>
                     </div>
                 </form>

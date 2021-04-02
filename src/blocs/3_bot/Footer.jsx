@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import FooterContainer from '../style/FooterContainer';
+import FooterContainer from '../style/containers/FooterContainer';
 import Input from '../style/InptForm';
 import twitter from '../../assets/svg/twitter.svg';
 import facebook from '../../assets/svg/facebook.svg';
