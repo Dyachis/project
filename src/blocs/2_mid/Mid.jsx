@@ -9,7 +9,7 @@ import Mid from '../style/Mid';
 import WelcomeSection from './WelcomeSection/WelcomeSection';
 import EstateMap from './EstateMap';
 import UserPage from './UserPage'
-import EstatePage from './EstatePage';
+import EstatePage from './estatePage/EstatePage';
 
 export default function Md() {
 
@@ -49,6 +49,7 @@ export default function Md() {
                             ))
                         }
                     </Transition>
+                    <EstateMap/>
                 </Route>
                 <Route path='/profile' component={UserPage} />
                 <Route path='/estate' component={EstatePage} />
@@ -56,7 +57,6 @@ export default function Md() {
                 <Route path='/faq' component={Faq} />
                 <Redirect from='**' to='/home' />
             </Switch>
-            <EstateMap/>
         </Mid>
     );
 }
