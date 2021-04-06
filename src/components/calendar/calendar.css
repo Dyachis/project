@@ -1,0 +1,36 @@
+.calendar{
+    color: #0F4C81;
+    font-family: inherit;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.calendar .week{
+    display: flex;
+}
+
+.calendar .day{
+    padding: 3px;
+    text-align: center;
+    width: 100%;
+}
+
+.calendar .selected{
+    background-color: lightsalmon;
+}
+.calendar .today{
+    background-color: rgb(218, 218, 218);
+}
+
+
+.calendar .before{
+    color: rgb(218, 218, 218);
+}
+
+.calendar__header{
+    display: flex;
+    justify-content: space-between;
+}
