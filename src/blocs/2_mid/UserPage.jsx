@@ -10,7 +10,7 @@ export default function UserPage(){
         {img: img, name: 'Executive House in a Prestigious Area', area: '245', bads: 5, baths: 2, price: 1000},
         {img: img, name: 'Executive House in a Prestigious Area', area: '245', bads: 5, baths: 2, price: 3000}
     ]
-
+    
     return <UserPageContainer>
         <div className="profile">
             <h3>Profile</h3>

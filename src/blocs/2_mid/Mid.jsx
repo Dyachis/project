@@ -50,6 +50,7 @@ export default function Md() {
                         }
                     </Transition>
                     <EstateMap/>
+
                 </Route>
                 <Route path='/profile' component={UserPage} />
                 <Route path='/estate' component={EstatePage} />

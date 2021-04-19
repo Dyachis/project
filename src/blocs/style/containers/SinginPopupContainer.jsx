@@ -3,19 +3,18 @@ import color from '../../../assets/color/color'
 
 const Popup = styled.div`
 
-    .blur{
         position: fixed;
         height: 100vh;
         width: 100vw;
         z-index: 99;
         left: 0;
         top: 0;
-        background-color: #000000;
-        opacity: 0.4;
-    }
+        background: rgba(147, 147, 147, 0.2);;
+        backdrop-filter: blur(6px);
 
     .popup{
         position: fixed;
+        opacity: 1;
         left: 0; 
         right: 0; 
         margin: 100px auto;

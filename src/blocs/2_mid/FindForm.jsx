@@ -21,27 +21,11 @@ const options = [
 
 ]
 
-// let arr = [];
-
-//   const MyComponent = () => (
-//     <Select options={options} placeholder={'Enter city...'} className={'cityfield'}/>
-//     )
-
 export default function FindForm() {
     return <>
         <FindFormContainer>
-            {/* <form action="#">
-                <input class="box" list="Country" name="Countries" placeholder=" Country" />
-                <datalist id="Country">
-                    <option value="Afghanistan" />
-                    <option value="Albania" />
-                    <option value="Algeria" />
-                    <option value="American Samoa" />
-                </datalist>
-            </form> */}
             <form action="#" onSubmit={(e) => Finder(e)}>
                 <ul>
-                    {/* <li>{MyComponent()}</li> */}
                     <li><Select options={options} placeholder={'Enter city...'} className={'cityfield'} name='city' /></li>
                     <li className="dropdown">
                         <div className="dropbtn">Price</div>
@@ -49,7 +33,6 @@ export default function FindForm() {
                             <div className='strelka'>&#9650;</div>
                             <input type="text" name={'minprice'} autoComplete="off" placeholder={'Min'} />
                             <input type="text" name={'maxprice'} autoComplete="off" placeholder={'Max'} />
-                            {/* <Range class="price-range" min={0} max={100} step={10} defaultValue={[20,80]} /> */}
                         </div>
                     </li>
                     <li className="dropdown">
@@ -72,14 +55,6 @@ export default function FindForm() {
                         <div className="dropdown-content-room">
                             <div className='strelka-room'>&#9650;</div>
                             <div className='boxes'>
-                                {/* <ul>
-                                    <li><input type="button" name="onebtn" value="1" onClick={() => {}}/></li>
-                                    <li><input type="button" name="onebtn" value="2" onClick={() => {}}/></li>
-                                    <li><input type="button" name="onebtn" value="3" onClick={() => {}}/></li>
-                                    <li><input type="button" name="onebtn" value="4" onClick={() => {}}/></li>
-                                    <li><input type="button" name="onebtn" value="5" onClick={() => {}}/></li>
-                                    <li><input type="button" name="onebtn" value="6+" onClick={() => {}}/></li>
-                                </ul> */}
                             </div>
                         </div>
                     </li>
@@ -88,7 +63,6 @@ export default function FindForm() {
                         <div className="dropdown-content-dates">
                             <div className='strelka-dates'>&#9650;</div>
                             <input type="date" name="date"/>
-                            {/* ----- Вставь сюда календарь ----- */}
                         </div>
                     </li>
                     <input className='search' type="submit" value="Search" />

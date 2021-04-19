@@ -1,13 +1,10 @@
 import Types from './actionTypes';
 
-export function send({ array }) {
+export function getTheArr() {
     return (dispatch) => {
         setTimeout(() => {
             dispatch({
-                type: Types.send,
-                payload: {
-                    array,
-                },
+                type: Types.getTheArr,
             });
         }, 100);
     };

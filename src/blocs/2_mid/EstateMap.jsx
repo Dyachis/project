@@ -48,9 +48,6 @@ const mapStateToProps = ({array}) => {
 const mapDispatchToProps = dispatch => {
     return {
         send: array => dispatch(Actions.send(array)),
-        // addPost: post => dispatch(Actions.addPost(post)),
-        // rmPost: id => dispatch(Actions.removePost(id)),
-        // changeTodoStatus: (id,status) => dispatch(Actions.change({id,status}))
     }
 }
 

@@ -29,7 +29,6 @@ const Footer = styled.div`
         display: flex;
         flex-direction:column;
         justify-content: space-between;
-
     }
 
     div:last-child{

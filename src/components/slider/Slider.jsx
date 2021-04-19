@@ -24,6 +24,7 @@ export default function Slider(){
         } else {
             setTranslateX(0)
         }
+        console.log(translateX);
     }
 
     return (

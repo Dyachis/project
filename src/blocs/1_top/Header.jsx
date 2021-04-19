@@ -72,7 +72,7 @@ function Header({context}) {
                         ))
                     }
                 </Transition>
-                {showPopup && <SinginPopup changePopup={setPopup} toggleBlur={context.toggleBlur}/>}
+                {showPopup && <SinginPopup changePopup={setPopup}/>}
             </div>
         </HeaderContainer>
     );
