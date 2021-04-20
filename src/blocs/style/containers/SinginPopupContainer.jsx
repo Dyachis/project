@@ -81,6 +81,15 @@ const Popup = styled.div`
         transform: rotate(-45deg);
     }
 
+    p{
+        color: #fff;
+    }
+
+    a:visited{
+        color: ${color.secondary};
+        text-decoration-color: #fff;
+    }
+
     .btns{
         display: flex;
         justify-content: space-between;

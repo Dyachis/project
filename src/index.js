@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
-import AppContextProvider from "./context/AppContextProvider";
 import { createStore, applyMiddleware, compose } from "redux";
 import rootReducer from "./redux/rootReducer";
 import { Provider } from "react-redux";
@@ -21,9 +20,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
-        <AppContextProvider>
           <App />
-        </AppContextProvider>
       </Router>
     </Provider>
   </React.StrictMode>,
