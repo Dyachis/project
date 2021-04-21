@@ -7,33 +7,27 @@ const FindFormContainer = styled.div`
 
     .cityfield{
         width: 500px;
-        color: ${color.main};
+         color: ${color.main};
     }
     
     ul{
         list-style: none;
         display: flex;
+        justify-content: space-between;
         color: ${color.main};
     }
 
     ul li:nth-child(n+2){
-        width: 225px;
-        margin-left: 40px;
+        width: 150px;
+        height: 50px;
         border: 1px solid ${color.main};
         border-radius: 5px;
-        padding: 6px;
+        padding: 12px;
     }
 
     .search{
-        font-size: 20px;
-        font-weight: normal;
-        color: ${color.main};
-        width: 225px;
-        margin-left: 40px;
-        background-color: white;
-        border: 1px solid ${color.main};
-        border-radius: 5px;
-        padding: 6px;
+        font-size: 0px;
+        opacity: 0;
     }
     
     .search:hover {
@@ -46,7 +40,6 @@ const FindFormContainer = styled.div`
         display: none;
         position: absolute;
         background-color: #ffffff;
-        //min-width: calc((100% / 2 - 10px) / 2 - 73px);
         z-index: 1;
       }
 
@@ -59,8 +52,9 @@ const FindFormContainer = styled.div`
       }
       
       .dropdown .dropbtn{
+        padding: 3px;
         background-color:transparent;
-        font-size: 1.3rem;
+        font-size: 16px;
         font-family: sans-serif;
         font-weight: 100;
         color: ${color.main};
@@ -74,17 +68,30 @@ const FindFormContainer = styled.div`
       }
       
       .dropdown-content {
-        margin-top: 7px;
+        margin-top: 12px;
         border-radius: 5px;
         background-color: ${color.main};
         color: white;
         width: 350px;
         height: 150px;
       }
+
+      .dropdown-content .boxes ul{
+        display: flex;
+        color: white;
+        margin-top: 7px;
+      }
       
-      // .dropdown-content .price-range{
-      //     margin-top: 20px;
-      // }
+      .dropdown-content .boxes ul li input{
+        width: 100px;
+      }
+
+      .dropdown-content .boxes ul li{
+        width: 100%;
+        border: 0px;
+        text-align: left;
+        font-weight: lighter;
+      }
 
       //-----------------------------------------------[↑Price↑]-------------------------------------------------------
 
@@ -95,7 +102,7 @@ const FindFormContainer = styled.div`
         position: absolute;
         background-color: #ffffff;
         z-index: 1;
-        margin-top: 7px;
+        margin-top: 12px;
         border-radius: 5px;
         background-color: ${color.main};
         color: white;
@@ -112,30 +119,36 @@ const FindFormContainer = styled.div`
         right: 137px;
         top: -17px;
       }
-      
-      .dropdown-content-type .boxes ul{
-        display: block;
-        color: white;
-        margin-top: 7px;
-      }
-      
-      .dropdown-content-type .boxes ul li{
-        width: 100%;
-        margin-left: 20px;
-        border: 0px;
-        padding: 5px;
+
+      .dropdown-content-type .container {
+        width: 180px;
+        margin: 0 10px;
+        border-radius: 5px;
         text-align: left;
-        font-weight: lighter;
+        display: block;
+        position: relative;
+        padding-left: 20px;
+        margin-top: 8px;
+        cursor: pointer;
+        font-size: 20px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
       }
 
-      .dropdown-content-type .boxes ul li span{
-        margin-left: 20px;
-      }
-      
-      .dropdown-content-type .boxes ul li input:hover{
+      .container input {
+        position: absolute;
+        opacity: 0;
         cursor: pointer;
+        height: 0;
+        width: 0;
       }
-      
+
+      .container:hover{
+
+      }
+
       //-----------------------------------------------[↑TYPE↑]--------------------------------------------------------
       
       //-----------------------------------------------[↓ROOM↓]--------------------------------------------------------
@@ -145,39 +158,53 @@ const FindFormContainer = styled.div`
         position: absolute;
         background-color: #ffffff;
         z-index: 1;
-        margin-top: 7px;
+        margin-top: 12px;
         border-radius: 5px;
         background-color: ${color.main};
         color: white;
-        width: 200px;
-        height: 175px;
+        width: 300px;
+        height: 60px;
       }
       
       .dropdown .strelka-room{
         font-size: 20px;
         color: ${color.main};
         position: absolute;
-        right: 137px;
+        right: 230px;
         top: -17px;
       }
       
       .dropdown:hover .dropdown-content-room {display: block;}
-      
-      .dropdown-content-room .boxes ul{
-        display: flex;
-        color: white;
-        margin-top: 7px;
+
+      .dropdown-content-room .container {
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        color: ${color.main};
+        padding: 6px;
+        margin: 9px;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
       }
-      
-      .dropdown-content-room .boxes ul li{
-        width: 100%;
-        margin-left: 12px;
-        border: 0px;
-        padding: 5px;
-        text-align: left;
-        font-weight: lighter;
+
+      .dropdown-content-room .container:hover{
+        opacity: 0.85;
       }
-      
+
+      .dropdown-content-room .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+
       //-----------------------------------------------[↑ROOM↑]--------------------------------------------------------
       
       //-----------------------------------------------[↓DATE↓]--------------------------------------------------------
@@ -187,7 +214,7 @@ const FindFormContainer = styled.div`
         position: absolute;
         background-color: #ffffff;
         z-index: 1;
-        margin-top: 7px;
+        margin-top: 12px;
         border-radius: 5px;
         background-color: ${color.main};
         color: white;
@@ -210,6 +237,6 @@ const FindFormContainer = styled.div`
       .dropdown:hover .dropdown-content {display: block;}
       
       `
-      
-      export default FindFormContainer
-      
+
+export default FindFormContainer
+

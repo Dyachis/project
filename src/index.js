@@ -17,6 +17,8 @@ const enhancer = composeEnhancers(applyMiddleware(thunk));
 
 const store = createStore(rootReducer, enhancer);
 
+document.title = 'RentME'
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
