@@ -11,7 +11,7 @@ const Button = styled.button`
     position: relative;
     overflow: hidden;
     z-index: 0;
-    margin-left: 10px;
+    /* margin-left: 20px; */
 
     color: ${props => props.primary ? color.main : '#ffff'};
     background: ${props => props.primary ? '#ffff' : color.main};

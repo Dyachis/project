@@ -23,12 +23,12 @@ export default function SelectList(){
         minHeight: '40px',
       });
       
-      const colourStyles = {
+      const Styles = {
         control: styles => ({ ...styles,}),
         input: styles => ({ ...styles, ...dot() }),
         placeholder: styles => ({ ...styles, ...dot() }),
         singleValue: (styles, { data }) => ({ ...styles, ...dot(data.color) }),
       };
 
-      return <li><Select options={options} placeholder={'Enter city...'} className={'cityfield'} name='city' styles={colourStyles}/></li>
+      return <li><Select options={options} placeholder={'Enter city...'} className={'cityfield'} name='city' styles={Styles}/></li>
 }

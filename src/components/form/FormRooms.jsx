@@ -12,8 +12,8 @@ export default function FormRooms() {
     const [four, setFour] = useState(false);
     const [five, setFive] = useState(false);
     
-    return <li className="dropdown">
-        <div className="dropbtn">{count > 0 ? count + ' of 5' : "Rooms"}</div>
+    return <li className="dropdown" style={{backgroundColor: 'white'}}>
+        <div className="dropbtn" >{count > 0 ? count + ' of 5' : "Rooms"}</div>
         <div className="dropdown-content-room">
             <div className='strelka-room'>&#9650;</div>
             <div className='boxes'>

@@ -25,24 +25,37 @@ const WelcomeSection = styled.div`
     }
 
     form{
+        margin-top: 20px;
         display: flex;
         flex-direction: row;
-       justify-content: center;
-       z-index: 10;
+        justify-content: center;
+        z-index: 10;
     }
-    form div{
+    /* form div{
         margin-right: 20px;
         z-index: 10;
-    }    
+    }     */
 
     .cover{
         background-color: rgba(0,0,0,0.3);
-        z-index: 1;
+        z-index: 0;
         height: 100%;
         width: 100%;
         position: absolute;
         top: 0px;
     }
+
+    /* .cityfield{
+        width: 300px;
+    } */
+
+    /* form ul li{
+        margin-left: 20px;
+    } */
+
+    /* form input{
+        margin-left: 20px;
+    } */
 `
 
 export default WelcomeSection

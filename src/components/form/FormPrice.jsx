@@ -18,7 +18,7 @@ export default function FormPrice() {
     //     }
     // }
 
-    return <li className="dropdown">
+    return <li className="dropdown" style={{backgroundColor:'white'}}>
         <div className="dropbtn">Price</div>
         {/* <div className="dropbtn">{min > -0.00 ? 'From ' + min : 'Price'}{max > 1000 ? " to " + max : ""}</div> */}
         <div className="dropdown-content">

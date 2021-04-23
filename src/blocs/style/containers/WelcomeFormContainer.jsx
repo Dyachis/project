@@ -7,7 +7,7 @@ const FindFormContainer = styled.div`
     z-index: 10;
 
     .cityfield{
-        width: 500px;
+        width: 300px;
          color: ${color.main};
     }
     
@@ -21,7 +21,7 @@ const FindFormContainer = styled.div`
     ul li:nth-child(n+2){
         width: 150px;
         height: 50px;
-        // margin-left: 10px;
+        margin-left: 20px;
         border: 1px solid ${color.main};
         border-radius: 5px;
         padding: 12px;
@@ -30,6 +30,10 @@ const FindFormContainer = styled.div`
     .search{
         font-size: 0px;
         opacity: 0;
+    }
+
+    .inp{
+      margin-left: 20px;
     }
     
     .search:hover {
@@ -96,62 +100,6 @@ const FindFormContainer = styled.div`
       }
 
       //-----------------------------------------------[↑Price↑]-------------------------------------------------------
-
-      //-----------------------------------------------[↓TYPE↓]--------------------------------------------------------
-      
-      .dropdown-content-type {
-        display: none;
-        position: absolute;
-        background-color: #ffffff;
-        z-index: 1;
-        margin-top: 12px;
-        border-radius: 5px;
-        background-color: ${color.main};
-        color: white;
-        width: 200px;
-        height: 175px;
-      }
-      
-      .dropdown:hover .dropdown-content-type {display: block;}
-      
-      .dropdown .strelka-type{
-        font-size: 20px;
-        color: ${color.main};
-        position: absolute;
-        right: 137px;
-        top: -17px;
-      }
-
-      .dropdown-content-type .container {
-        width: 180px;
-        margin: 0 10px;
-        border-radius: 5px;
-        text-align: left;
-        display: block;
-        position: relative;
-        padding-left: 20px;
-        margin-top: 8px;
-        cursor: pointer;
-        font-size: 20px;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      .container input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-        height: 0;
-        width: 0;
-      }
-
-      .container:hover{
-
-      }
-
-      //-----------------------------------------------[↑TYPE↑]--------------------------------------------------------
       
       //-----------------------------------------------[↓ROOM↓]--------------------------------------------------------
       
@@ -208,33 +156,6 @@ const FindFormContainer = styled.div`
       }
 
       //-----------------------------------------------[↑ROOM↑]--------------------------------------------------------
-      
-      //-----------------------------------------------[↓DATE↓]--------------------------------------------------------
-
-      .dropdown-content-dates {
-        display: none;
-        position: absolute;
-        background-color: #ffffff;
-        z-index: 1;
-        margin-top: 12px;
-        border-radius: 5px;
-        background-color: ${color.main};
-        color: white;
-        width: 200px;
-        height: 175px;
-      }
-      
-      .dropdown .strelka-dates{
-        font-size: 20px;
-        color: ${color.main};
-        position: absolute;
-        right: 137px;
-        top: -17px;
-      }
-      
-      .dropdown:hover .dropdown-content-dates {display: block;}
-
-      //-----------------------------------------------[↑DATE↑]--------------------------------------------------------
 
       .dropdown:hover .dropdown-content {display: block;}
       
