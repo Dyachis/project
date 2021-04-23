@@ -44,18 +44,6 @@ const WelcomeSection = styled.div`
         position: absolute;
         top: 0px;
     }
-
-    /* .cityfield{
-        width: 300px;
-    } */
-
-    /* form ul li{
-        margin-left: 20px;
-    } */
-
-    /* form input{
-        margin-left: 20px;
-    } */
 `
 
 export default WelcomeSection

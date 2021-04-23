@@ -5,13 +5,13 @@ export default function idleCounter(e,count) {
 }
 
 function Counter(e,count) {
-    if (parseInt(e.target.id) % 2 === 0) {
+    if (parseInt(e.target.min) % 2 === 0) {
         count++;
-        e.target.id = parseInt(e.target.id) - 1;
+        e.target.min = parseInt(e.target.min) - 1;
         return count;
-    } else if (parseInt(e.target.id) % 2 === 1) {
+    } else if (parseInt(e.target.min) % 2 === 1) {
         count--;
-        e.target.id = parseInt(e.target.id) + 1;
+        e.target.min = parseInt(e.target.min) + 1;
         return count;
     }
 }

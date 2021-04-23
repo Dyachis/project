@@ -14,7 +14,7 @@ export default function FindForm() {
                     <SelectList/>
                     <FormPrice />
                     <FormType />
-                    <FormRooms />
+                    <FormRooms/>
                     <li className="dropdown">
                         <div className="dropbtn">Dates</div>
                         <div className="dropdown-content-dates">
