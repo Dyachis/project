@@ -7,7 +7,6 @@ import tel_aviv from '../../../assets/img/tel_aviv.png'
 
 const PopularCitiesContainer = styled.div`
     padding: 60px 0 ;
-    cursor: pointer;
 
     h1{
         text-align: center;
@@ -20,6 +19,7 @@ const PopularCitiesContainer = styled.div`
     }
 
     .PopularCities__city{
+        cursor: pointer;
         width: 320px;
         height: 250px;
         border-radius: 5px;

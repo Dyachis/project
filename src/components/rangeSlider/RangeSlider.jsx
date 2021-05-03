@@ -8,11 +8,11 @@ import color from '../../assets/color/color'
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: '300px',
+        width: '250px',
         margin: '0 auto',
     },
     margin: {
-        height: theme.spacing(3),
+        marginTop: '20px' 
     },
 }));
 
@@ -33,7 +33,7 @@ ValueLabelComponent.propTypes = {
     value: PropTypes.number.isRequired,
 };
 
-const AirbnbSlider = withStyles({
+const MySlider = withStyles({
     root: {
         color: '#fff',
         height: 3,
@@ -85,7 +85,7 @@ function Placeholder(value) {
         return 'To ' + value[1]
     }
     
-    return 'Up to 10000'
+    return 'All prices'
 }
 
 export default function RangeSlider() {
@@ -106,7 +106,7 @@ export default function RangeSlider() {
         <div className={classes.root}>
             <div className={classes.margin} />
             <Typography gutterBottom>{Placeholder(value)}</Typography>
-            <AirbnbSlider
+            <MySlider
                 value={value}
                 getAriaLabel={(index) => (index === 0 ? 'Minimum price' : 'Maximum price')}
                 onChange={handleChange}

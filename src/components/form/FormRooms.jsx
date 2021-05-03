@@ -18,23 +18,23 @@ export default function FormRooms() {
             <div className='strelka-room'>&#9650;</div>
             <div className='boxes'>
                 <label className="container" style={{backgroundColor: one ? color.secondary : 'white', color: one ?  'white' : color.main }}>1
-                    <input type="checkbox" name='oneroom' min={'12'} onClick={((e) => {setOne(!one); setCount(idleCounter(e, count));})}/>
+                    <input type="checkbox" name='oneroom' min={'2'} onClick={((e) => {setOne(!one); setCount(idleCounter(e, count));})}/>
                     <span className="checkmark" ></span>
                 </label>
                 <label className="container" style={{backgroundColor: two ? color.secondary : 'white', color: two ? 'white' : color.main}}>2
-                    <input type="checkbox" name='tworoom' min={'14'} onClick={((e) => {setTwo(!two); setCount(idleCounter(e, count));})}/>
+                    <input type="checkbox" name='tworoom' min={'2'} onClick={((e) => {setTwo(!two); setCount(idleCounter(e, count));})}/>
                     <span className="checkmark"></span>
                 </label>
                 <label className="container" style={{backgroundColor: three ? color.secondary : 'white', color: three ? 'white' : color.main}}>3
-                    <input type="checkbox" name='threeroom' min={'16'} onClick={((e) => {setThree(!three); setCount(idleCounter(e, count));})}/>
+                    <input type="checkbox" name='threeroom' min={'2'} onClick={((e) => {setThree(!three); setCount(idleCounter(e, count));})}/>
                     <span className="checkmark"></span>
                 </label>
                 <label className="container" style={{backgroundColor: four ? color.secondary : 'white', color: four ? 'white' : color.main}}>4
-                    <input type="checkbox" name='fourroom' min={'18'} onClick={((e) => {setFour(!four); setCount(idleCounter(e, count));})}/>
+                    <input type="checkbox" name='fourroom' min={'2'} onClick={((e) => {setFour(!four); setCount(idleCounter(e, count));})}/>
                     <span className="checkmark"></span>
                 </label>
                 <label className="container" style={{backgroundColor: five ? color.secondary : 'white', color: five ? 'white' : color.main}}>5
-                    <input type="checkbox" name='fiveroom' min={'20'} onClick={((e) => {setFive(!five); setCount(idleCounter(e, count));})}/>
+                    <input type="checkbox" name='fiveroom' min={'2'} onClick={((e) => {setFive(!five); setCount(idleCounter(e, count));})}/>
                     <span className="checkmark"></span>
                 </label>
             </div>

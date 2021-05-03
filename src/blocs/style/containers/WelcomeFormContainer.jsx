@@ -53,7 +53,7 @@ const FindFormContainer = styled.div`
         font-size: 20px;
         color: ${color.main};
         position: absolute;
-        right: 288px;
+        right: 233px;
         top: -17px;
       }
       
@@ -78,25 +78,8 @@ const FindFormContainer = styled.div`
         border-radius: 5px;
         background-color: ${color.main};
         color: white;
-        width: 350px;
-        height: 150px;
-      }
-
-      .dropdown-content .boxes ul{
-        display: flex;
-        color: white;
-        margin-top: 7px;
-      }
-      
-      .dropdown-content .boxes ul li input{
-        width: 100px;
-      }
-
-      .dropdown-content .boxes ul li{
-        width: 100%;
-        border: 0px;
-        text-align: left;
-        font-weight: lighter;
+        width: 300px;
+        height: 125px;
       }
 
       //-----------------------------------------------[↑Price↑]-------------------------------------------------------

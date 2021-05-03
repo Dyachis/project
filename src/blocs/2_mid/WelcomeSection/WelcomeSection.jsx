@@ -28,7 +28,7 @@ export default function WelcomeSection({
                             <FormRooms/>
                                 <div className='inp'>
                             <InputButton>
-                                    Search
+                                    Find place
                                     <input className='search' type="submit" value="Search"/>
                             </InputButton>
                                 </div>
