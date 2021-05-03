@@ -31,7 +31,8 @@ const VerticalScroll = styled.div`
         border-radius: 0 0 5px 5px;
         position: absolute;
         bottom: 0;
-        height: 100px;
+        height: 85px;
+        width: 100%;
         background-color: ${color.main};
         display: grid;
         grid-template-columns: 2fr 1fr 1fr;

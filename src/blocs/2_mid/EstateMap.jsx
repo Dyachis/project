@@ -2,14 +2,12 @@ import EstateMapContainter from '../style/containers/EstateMapContainter'
 import VerticalScroll from '../../components/VerticalScroll'
 import PopularCities from './PopularCities';
 import Map from '../../components/Map'
-import {connect} from 'react-redux';
 
-import * as Actions from '../../redux/post/actionCreator'
 import FindForm from './FindForm'
 import img from '../../assets/img/dom.png'
 import { useState } from 'react';
 
-function EstateMap({array, send}){
+function EstateMap(){
 
     const arr = [
         {img: img, name: 'Executive House in a Prestigious Area', area: '245', bads: 5, baths: 2, price: 1000},
@@ -19,10 +17,6 @@ function EstateMap({array, send}){
         {img: img, name: 'Executive House in a Prestigious Area', area: '245', bads: 5, baths: 2, price: 5000},
     ]
     const [latLang, setLatLang] = useState({lat: 59.95, lng: 30.33})
-
-    send({
-        array:arr
-    })
 
     return(
         <EstateMapContainter>
@@ -39,19 +33,5 @@ function EstateMap({array, send}){
     )
 }
 
-const mapStateToProps = ({array}) => {
-    return {
-        array:array
-    }
-}
 
-const mapDispatchToProps = dispatch => {
-    return {
-        send: array => dispatch(Actions.send(array)),
-        // addPost: post => dispatch(Actions.addPost(post)),
-        // rmPost: id => dispatch(Actions.removePost(id)),
-        // changeTodoStatus: (id,status) => dispatch(Actions.change({id,status}))
-    }
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(EstateMap);
+export default EstateMap

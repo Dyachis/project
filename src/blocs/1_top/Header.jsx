@@ -1,81 +1,39 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Transition } from 'react-spring/renderprops';
-import withContext from '../../context/withContext';
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
-import HeaderContainer from '../style/containers/HeaderContainer';
-import Button from '../style/Button';
-import RentMe from '../../assets/svg/Logo.svg';
-import SinginPopup from '../../components/SinginPopup';
+import { useAuth } from '../../context/AuthContext'
+import TransitionMenu from './TransitionMenu'
+import HeaderContainer from '../style/containers/HeaderContainer'
+import RentMe from '../../assets/svg/Logo.svg'
+import SinginPopup from '../../components/singinPopup/SinginPopup'
+import MenuIfNoLogedIn from './MenuIfNoLogedIn'
+import MenuIfLogedIn from './MenuIfLogedIn'
 
-function Header({context}) {
-    const [showMenu, setMenu] = useState(false);
-    const [showPopup, setPopup] = useState(false);
+function Header() {
+  const [showMenu, setMenu] = useState(false)
+  const [shownPopup, setPopup] = useState(false)
+  const { currentUser, logout } = useAuth()
 
-    return (
-        <HeaderContainer>
-            <div className='header__logo'>
-                <Link to='/home'>
-                    <img src={RentMe} alt='logo' />
-                </Link>
-            </div>
-            <div className='header__menu'>
-                <Transition
-                    items={!showMenu}
-                    enter={{ opacity: 1, transform: 'translateX(0)' }}
-                    leave={{ display: 'flex' }}
-                    from={{ opacity: 0, transform: 'translateX(-300px)' }}
-                >
-                    {(item) =>
-                        item &&
-                        ((props) => (
-                            <ul style={props} onMouseEnter={setMenu}>
-                                <div className='palki'>
-                                    <div></div>
-                                    <div></div>
-                                </div>
-                                <div className='palki'>
-                                    <div></div>
-                                    <div></div>
-                                </div>
-                                <h3>Menu</h3>
-                            </ul>
-                        ))
-                    }
-                </Transition>
-                <Transition
-                    items={showMenu}
-                    enter={{ opacity: 1, transform: 'translateX(0)' }}
-                    leave={{ opacity: 1, transform: 'translateX(0)' }}
-                    from={{ opacity: 0, transform: 'translateX(200px)' }}
-                >
-                    {(item) =>
-                        item &&
-                        ((props) => (
-                            <ul style={props}>
-                                <li>My favorites</li>
-                                <li>
-                                    <p>Profile</p>
-                                </li>
-                                <li>
-                                    <Button
-                                        primary
-                                        onClick={() => {
-                                            setPopup(!showPopup)
-                                            context.toggleBlur()
-                                        }}
-                                    >
-                                        Sign up
-                                    </Button>
-                                </li>
-                            </ul>
-                        ))
-                    }
-                </Transition>
-                {showPopup && <SinginPopup changePopup={setPopup} toggleBlur={context.toggleBlur}/>}
-            </div>
-        </HeaderContainer>
-    );
+  return (
+    <HeaderContainer>
+      <div className='header__logo'>
+        <Link to='/home'>
+          <img src={RentMe} alt='logo' />
+        </Link>
+      </div>
+      <div className='header__menu'>
+        <TransitionMenu setMenu={setMenu} showMenu={showMenu}/>
+        {currentUser ? 
+        <MenuIfLogedIn  showMenu={showMenu} logout={logout}/>
+        :
+        <MenuIfNoLogedIn showMenu={showMenu} shownPopup={shownPopup} setPopup={setPopup}/>
+        }
+        {shownPopup && (
+          <SinginPopup setPopup={setPopup} />
+        )}
+      </div>
+    </HeaderContainer>
+  )
 }
 
-export default withContext(Header);
+export default Header

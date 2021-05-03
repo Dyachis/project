@@ -59,6 +59,7 @@ h4{
   backdrop-filter: blur(5px);
 }
 
-.qwert{
-  background-color: orange;
+a{
+  text-decoration: none;
+  color: white;
 }

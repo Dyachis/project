@@ -16,6 +16,10 @@ const Button = styled.button`
     background: ${props => props.primary ? '#ffff' : color.main};
     border: 1px solid ${color.main};
 
+    &:disabled{
+        background-color: grey;
+    }
+
     &:hover{
         color: ${props => props.primary ? '#ffff' : color.main};;
         border: 1px solid ${props => props.primary ? '#ffff' : color.main};

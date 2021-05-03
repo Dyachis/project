@@ -5,6 +5,7 @@ const SliderContainer = styled.div`
     display: flex;
     overflow: hidden;
     position: relative;
+    margin-bottom: 60px;
 
     .slider{
         display: flex;
