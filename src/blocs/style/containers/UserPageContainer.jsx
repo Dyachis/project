@@ -36,6 +36,11 @@ const UserPageContainer = styled.div`
         overflow: hidden;
         border-radius: 50%;
         margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .container img{
+        width: inherit;
     }
 
 `

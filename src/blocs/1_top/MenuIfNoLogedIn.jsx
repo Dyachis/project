@@ -28,7 +28,6 @@ export default function MenuIfNoLogedIn({
         item &&
         ((props) => (
           <ul style={props}>
-            <li>Post your rental</li>
             <li>
               <Link to='/home/login'>
                 <Button
@@ -48,7 +47,7 @@ export default function MenuIfNoLogedIn({
                     setPopup(!shownPopup)
                   }}
                 >
-                  Sing up
+                  Register
                 </Button>
               </Link>
             </li>

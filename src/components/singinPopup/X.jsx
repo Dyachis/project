@@ -1,9 +1,9 @@
-export default function X({history, changePopup}) {
+export default function X({history, setPopup}) {
   return (
     <div
       className='x'
       onClick={() => {
-        changePopup()
+        setPopup()
         history.push('/home')
       }}
     >

@@ -10,8 +10,8 @@ function App() {
     <AppContainer>
       <AuthProvider>
         <Header />
+        <Mid />
       </AuthProvider>
-      <Mid />
       <Footer />
     </AppContainer>
   )

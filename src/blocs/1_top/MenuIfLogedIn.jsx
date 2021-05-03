@@ -24,9 +24,8 @@ export default function MenuIfLogedIn({ showMenu, logout }) {
         item &&
         ((props) => (
           <ul style={props}>
-            <li>My favorites</li>
-            <li>Profile</li>
-            <li></li>
+            <li><Link to='/profile/publish'><Button style={{width: '250px'}}>Publish a new property</Button></Link></li>
+            <li><Link to='/profile'><Button>Profile</Button></Link></li>
             <li>
               <Link to='/home/register'>
                 <Button primary onClick={logout}>
