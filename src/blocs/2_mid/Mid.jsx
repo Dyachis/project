@@ -6,7 +6,7 @@ import Contact from './emptyPages/Contact';
 import Faq from './emptyPages/Faq';
 
 import Mid from '../style/Mid';
-import WelcomeSection from './WelcomeSection/WelcomeSection';
+import WelcomeSection from './welcomeSection/WelcomeSection';
 import EstateMap from './EstateMap';
 import UserPage from './UserPage'
 import EstatePage from './estatePage/EstatePage';
