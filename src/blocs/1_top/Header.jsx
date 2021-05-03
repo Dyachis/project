@@ -65,7 +65,7 @@ function Header({context}) {
                                             context.toggleBlur()
                                         }}
                                     >
-                                        Sing up
+                                        Sign up
                                     </Button>
                                 </li>
                             </ul>
