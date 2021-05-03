@@ -21,6 +21,7 @@ function MyComponent({ size, center }) {
       googleMapsApiKey="AIzaSyBZHEa-5H2Y0u5OKBkjCXWT0rdknUrEj44"
     >
       <GoogleMap
+      onClick={(e)=> console.log(e.latLng.toJSON())}
         options={{
           disableDefaultUI: true,
           mapTypeControl: false,
