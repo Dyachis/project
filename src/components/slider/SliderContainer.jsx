@@ -8,17 +8,20 @@ const SliderContainer = styled.div`
     margin-bottom: 60px;
 
     .slider{
+        min-width: 100%;
         display: flex;
-        justify-content: space-between;
+        justify-content: ${props => props.pics > 2 ? 'space-between' : 'center'};
         transform: ${props => 'translateX(-' + props.translateX + 'px)'};
         transition: transform ease-out 0.45s;
     }
 
     .img{
-        width: calc((100% - 40px) / 3);
+        width: 442px;
         height: 300px;
         flex-shrink: 0;
-        margin-right: 20px;
+        margin-right: ${props => props.pics > 1 && '20px'};
+        overflow: hidden;
+        border-radius: 10px;
     }
 
     img{

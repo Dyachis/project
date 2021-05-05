@@ -7,8 +7,7 @@ import FormRooms from '../../components/form/FormRooms';
 import InputButton from '../../blocs/style/InputButton';
 
 export default function FindForm() {
-    return <>
-        <FindFormContainer>
+    return <FindFormContainer>
             <form action="#" onSubmit={(e) => Finder(e)}>
                 <ul>
                     <SelectList/>
@@ -30,9 +29,6 @@ export default function FindForm() {
                 </ul>
             </form>
         </FindFormContainer>
-
-
-    </>
 }
 
 function Finder(e) {

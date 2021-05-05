@@ -12,7 +12,7 @@ function Footer() {
                 <h2>
                     Subscribe to our newsletter to receive exclusive information
                 </h2>
-                <Input size={{width: '250px'}}><input/><button>OK</button></Input>
+                <Input size={{width: '350px'}}><input placeholder='Subscribe to our latest news!'/></Input>
             </div>
             <div>
                 <ul>

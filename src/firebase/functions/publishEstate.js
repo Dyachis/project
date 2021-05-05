@@ -14,10 +14,11 @@ export default function publishEstate(e, user){
         bads: e.target.bads.value,
         baths: e.target.baths.value,
         email: user.email,
-        img: url,
+        img: [url,],
         name: e.target.name.value,
         price: e.target.price.value,
         uid: user.uid,
+        owner: `${user.name} ${user.lastname}`
       };
       rentObj = obj
     }).then(() => {

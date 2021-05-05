@@ -3,11 +3,14 @@ import EditContainer from '../../style/containers/EditContainer'
 import publishEstate from '../../../firebase/functions/publishEstate'
 import { useAuth } from '../../../context/AuthContext'
 import { useState } from 'react'
+import { useHistory } from 'react-router'
 
 
 export default function PublishPage() {
 
   const {currentUser} = useAuth()
+  const history = useHistory()
+
   const [name, setName] = useState(false)
   const [bads, setBads] = useState(false)
   const [baths, setBaths] = useState(false)
@@ -29,9 +32,12 @@ export default function PublishPage() {
     else setPrice(false)
     if (e.target.file.value === '') setFile(true)
     else setFile(false)
-    if ([name, bads, baths, area, price].includes(true)){
+    if (![name, bads, baths, area, price].includes(true)){
     } else {
       publishEstate(e, currentUser)
+      setTimeout(() => {
+        history.push('/profile')
+      },2000)
     }
   }
 

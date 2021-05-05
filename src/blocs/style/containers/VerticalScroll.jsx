@@ -15,6 +15,7 @@ const VerticalScroll = styled.div`
         overflow: hidden;
         position: relative;
         margin-bottom: 20px;
+        cursor: pointer;
     }
 
     .card:last-child{

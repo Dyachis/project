@@ -14,7 +14,7 @@ import WelcomeSection from './welcomeSection/WelcomeSection'
 import EstateMap from './EstateMap'
 import ProfilePage from './profilePage/ProfilePage'
 import EstatePage from './estatePage/EstatePage'
-import PublishPage from './estatePage/PublishPage'
+import PublishPage from './publishPage/PublishPage'
 
 export default function Md() {
   const [showWelcomeSection, setWelcomeSection] = useState(
