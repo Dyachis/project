@@ -1,6 +1,7 @@
 import FindFormContainer from '../style/containers/FindFormContainer';
 import React from 'react';
-import SelectList from '../../components/form/FormSelect';
+import Select from 'react-select';
+import options from '../../components/form/SelectOptions';
 import FormType from '../../components/form/FormType';
 import FormPrice from '../../components/form/FormPrice';
 import FormRooms from '../../components/form/FormRooms';
@@ -10,7 +11,7 @@ export default function FindForm() {
     return <FindFormContainer>
             <form action="#" onSubmit={(e) => Finder(e)}>
                 <ul>
-                    <SelectList/>
+                <li><Select options={options} placeholder={'Enter city...'} className={'cityfield'} name='city' styles={{input: styles => ({ ...styles, minHeight: '40px' })}}/></li>
                     <FormPrice />
                     <FormType />
                     <FormRooms/>

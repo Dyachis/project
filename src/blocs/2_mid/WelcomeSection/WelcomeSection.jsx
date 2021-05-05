@@ -1,6 +1,7 @@
 import WelcomeSectionContainer from '../../style/containers/WelcomeSectionContainer'
 import WelcomeFormContainer from '../../style/containers/WelcomeFormContainer'
-import FormSelect from '../../../components/form/FormSelect'
+import Select from 'react-select';
+import options from '../../../components/form/SelectOptions';
 import FormPrice from '../../../components/form/FormPrice'
 import FormRooms from '../../../components/form/FormRooms'
 import InputButton from '../../../blocs/style/InputButton'
@@ -21,7 +22,7 @@ export default function WelcomeSection({
         <WelcomeFormContainer>
           <form action='#' onSubmit={(e) => Finder(e)}>
             <ul>
-              <FormSelect />
+            <Select options={options} placeholder={'Enter city...'} className={'cityfield'} name='city' styles={{input: styles => ({ ...styles, minHeight: '40px' })}}/>
               <FormPrice />
               <FormRooms />
               <div className='inp'>
