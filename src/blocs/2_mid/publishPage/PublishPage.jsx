@@ -4,7 +4,8 @@ import { useAuth } from '../../../context/AuthContext'
 import { useState } from 'react'
 import { useHistory } from 'react-router'
 
-import Map from '../../../components/PlacePickMap'
+// import Map from '../../../components/PlacePickMap'
+import Map from '../../../components/Map'
 import Select from 'react-select';
 import options from '../../../components/form/SelectOptions';
 
@@ -22,24 +23,25 @@ export default function PublishPage() {
   
   function handleSubmit(e){
     e.preventDefault()
-    if (e.target.name.value === '') setName(true)
+    if (e.target.name.value === '') return setName(true)
     else setName(false)
-    if (e.target.bads.value === '') setBads(true)
+    if (e.target.bads.value === '') return setBads(true)
     else setBads(false)
-    if (e.target.baths.value === '') setBaths(true)
+    if (e.target.baths.value === '') return setBaths(true)
     else setBaths(false)
-    if (e.target.area.value === '') setArea(true)
+    if (e.target.area.value === '') return setArea(true)
     else setArea(false)
-    if (e.target.price.value === '') setPrice(true)
+    if (e.target.price.value === '') return setPrice(true)
     else setPrice(false)
-    if (e.target.file.value === '') setFile(true)
+    if (e.target.file.value === '') return setFile(true)
     else setFile(false)
     if (![name, bads, baths, area, price].includes(true)){
     } else {
-      publishEstate(e, currentUser)
+      console.log('Submitted');
+      publishEstate(e, currentUser, latlng)
       setTimeout(() => {
         history.push('/profile')
-      },2000)
+      },3000)
     }
   }
   
@@ -98,12 +100,13 @@ export default function PublishPage() {
         placeholder={'Enter city...'} 
         onChange={(e) => {
           setCenter({lat: e.lat, lng: e.lng})
+          setLatLng({lat: e.lat, lng: e.lng})
         }}
         className={'cityfield'}
         name='city'
         styles={{input: styles => ({ ...styles, minHeight: '40px' })}}/>
       </div>
-      <Map center={center} size={{width: '500px', height: '500px'}} latlng={latlng} setLatLng={setLatLng}/>
+      <Map draggableMarker={true} center={center} size={{width: '500px', height: '500px'}} latlng={latlng} setLatLng={setLatLng}/>
 
         </form>
     </EditContainer>

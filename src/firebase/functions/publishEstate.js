@@ -1,6 +1,6 @@
 import { storage, firestore } from '../firebase'
 
-export default function publishEstate(e, user){
+export default function publishEstate(e, user, latlng){
   let rentObj = {}
   const file = e.target.file.files[0]
 
@@ -10,6 +10,8 @@ export default function publishEstate(e, user){
     .then(async () => {
       const url = await storageRef.getDownloadURL()
       const obj = {
+        latlng: {lat: latlng.lat,lng: latlng.lng},
+        city: e.target.city.value,
         area: e.target.area.value,
         bads: e.target.bads.value,
         baths: e.target.baths.value,

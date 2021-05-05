@@ -13,6 +13,8 @@ export default function EstatePage(){
     const {pathname} = useLocation()
     const estateId = pathname.replace(/estate/g, '').slice(2)
 
+    console.log(estate);
+
     useEffect(() => {
         const userRef = firestore.collection('rent-estates').doc(estateId)
         userRef
