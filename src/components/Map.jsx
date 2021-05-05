@@ -12,6 +12,7 @@ function MyComponent({ draggableMarker, size, center, latlng, setLatLng }) {
   const state = [
     { position: { lat: 59.955413, lng: 30.337844 }, text: '1' },
     { position: { lat: 59.855413, lng: 30.437844 }, text: '2' },
+    { position: { lat: 59.755413, lng: 30.537844 }, text: '2' },
   ]
 
   function dragMarker(e) {
@@ -24,6 +25,7 @@ function MyComponent({ draggableMarker, size, center, latlng, setLatLng }) {
         <GoogleMap
           onClick={dragMarker}
           options={{
+            clickableIcons: false,
             disableDefaultUI: true,
             mapTypeControl: false,
             streetViewControl: false,

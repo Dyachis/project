@@ -6,8 +6,8 @@ const EstateHook = (email) => {
 
   useEffect(() => {
     const estateRef = firestore.collection('rent-estates')
-    estateRef
-      .where('email', '==', email)
+    if (!email) {
+      estateRef
       .get()
       .then((snap) => {
         let arr = []
@@ -16,6 +16,18 @@ const EstateHook = (email) => {
         })
         setEstates(arr)
       })
+    } else {
+      estateRef
+        .where('email', '==', email)
+        .get()
+        .then((snap) => {
+          let arr = []
+          snap.forEach((doc) => {
+            arr.push({ ...doc.data(), id: doc.id })
+          })
+          setEstates(arr)
+        })
+    }
   }, [email])
 
   return { estates }
