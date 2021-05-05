@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import background from '../../../assets/img/background.png'
 
 const WelcomeSection = styled.div`
-    height: 100%;
+    height: 570px;
     background-image: url(${background});
     background-size: cover;
     background-position: center;
