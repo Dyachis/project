@@ -1,9 +1,11 @@
-import Button from '../../style/Button'
+// import Button from '../../style/Button'
 import EditContainer from '../../style/containers/EditContainer'
 import publishEstate from '../../../firebase/functions/publishEstate'
 import { useAuth } from '../../../context/AuthContext'
 import { useState } from 'react'
-
+import Map from '../../../components/PlacePickMap'
+import Select from 'react-select';
+import options from '../../../components/form/SelectOptions';
 
 export default function PublishPage() {
 
@@ -14,7 +16,7 @@ export default function PublishPage() {
   const [area, setArea] = useState(false)
   const [price, setPrice] = useState(false)
   const [file, setFile] = useState(false)
-
+  
   function handleSubmit(e){
     e.preventDefault()
     if (e.target.name.value === '') setName(true)
@@ -34,51 +36,70 @@ export default function PublishPage() {
       publishEstate(e, currentUser)
     }
   }
-
+  
+  
+  const [center, setCenter] = useState({lat:59.95, lng: 30.33})
+  const [latlng, setLatLng] = useState({lat:59.95, lng: 30.33})
+  
   return (
     <EditContainer>
       <h1>Publish your property</h1>
       <form onSubmit={handleSubmit}>
-        <div>
+      
+        <div htmlFor="form">
           <label htmlFor='name'>
             Name
           </label>
             <input name='name' id='name' type='text' style={{border: name && '1px solid red'}}/>
         </div>
-        <div>
+        <div htmlFor="form">
           <label htmlFor='bads'>
             Bads
           </label>
             <input id='bads' name='bads' type='number' style={{border: bads && '1px solid red'}}/>
         </div>
-        <div>
+        <div htmlFor="form">
           <label htmlFor='baths'>
             Baths
           </label>
             <input id='baths' name='baths' type='number' style={{border: baths && '1px solid red'}}/>
         </div>
-        <div>
+        <div htmlFor="form">
           <label htmlFor='area'>
             Area
           </label>
             <input id='area' name='area' type='number' style={{border: area && '1px solid red'}}/>
         </div>
-        <div>
+        <div htmlFor="form">
           <label htmlFor='price'>
             Price
           </label>
             <input id='price' name='price' type='number' style={{border: price && '1px solid red'}}/>
         </div>
-        <div>
+        <div htmlFor="form">
           <label htmlFor='file'>
             Img
           </label>
             <input id='file' name='file' type='file' style={{border: file && '1px solid red'}}/>
         </div>
-        <div>
-          <Button type='submit'>Submit</Button>
+        <div htmlFor="form">
+          <input type='submit' value='Submit'/>
         </div>
-      </form>
+      <div className='city'>
+
+      <Select
+        options={options}
+        placeholder={'Enter city...'} 
+        onChange={(e) => {
+          setCenter({lat: e.lat, lng: e.lng})
+        }}
+        className={'cityfield'}
+        name='city'
+        styles={{input: styles => ({ ...styles, minHeight: '40px' })}}/>
+      </div>
+      <Map center={center} size={{width: '500px', height: '500px'}} latlng={latlng} setLatLng={setLatLng}/>
+
+        </form>
     </EditContainer>
   )
 }

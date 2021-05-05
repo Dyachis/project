@@ -9,7 +9,11 @@ const Container = styled.section`
     flex-direction: column;
   }
 
-  form div {
+  form input{
+    height: 25px;
+  }
+
+  form *[for^="form"]{
     width: 500px;
     display: flex;
     justify-content: space-between;
@@ -20,6 +24,17 @@ const Container = styled.section`
     font-weight: normal;
     margin-bottom: 60px;
   }
+
+  .cityfield{
+    height: 50px;
+    margin: 20px 0;
+    width: 500px;
+  }
+
+  .cityfield div{
+    flex-direction: linear;
+  }
+  
 `
 
 export default Container
