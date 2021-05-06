@@ -21,7 +21,7 @@ const SliderContainer = styled.div`
         flex-shrink: 0;
         margin-right: ${props => props.pics > 1 && '20px'};
         overflow: hidden;
-        border-radius: 10px;
+        border-radius: 5px;
     }
 
     img{

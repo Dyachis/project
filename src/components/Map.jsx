@@ -1,8 +1,12 @@
-import React, {useRef} from 'react'
+import React, { useRef, useEffect } from 'react'
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api'
 import icon from '../assets/svg/Arrow.svg'
 
-function MyComponent({ draggableMarker, size, center, latlng, setLatLng, estateArr }) {
+let delay
+
+function MyComponent({ draggableMarker, size, center, latlng, setLatLng, estates, setEstatesOnBounds }) {
+  const mapRef = useRef(null)
+
   const containerStyle = {
     width: size.width,
     height: size.height,
@@ -11,21 +15,34 @@ function MyComponent({ draggableMarker, size, center, latlng, setLatLng, estateA
 
   function dragMarker(e) {
     if (draggableMarker) setLatLng(e.latLng.toJSON())
-    else console.log(e.latLng.toJSON());
   }
 
-  let tmp = estateArr;
-  const mapRef = useRef(null);
-
   function handleLoad(map) {
-    mapRef.current = map;
+    mapRef.current = map
   }
 
   function handleCenterChanged() {
-    if (!mapRef.current) return;
-    const newPos = mapRef.current.getBounds().contains({lat: 59.955413, lng: 30.337844});
-    console.log(newPos);
+    clearTimeout(delay)
+    if (!draggableMarker) {
+      if (!mapRef.current) return
+    delay = setTimeout(() => {
+        setEstatesOnBounds(checkIfEstateInBounds())
+      }, 1000)
+    }
   }
+
+  function checkIfEstateInBounds() {
+    if (draggableMarker) return
+    let tmp = estates.filter((e) => mapRef.current.getBounds().contains(e.latlng) === true)
+    return tmp
+  }
+
+  useEffect(() => {
+    if (draggableMarker) return
+    setEstatesOnBounds(checkIfEstateInBounds())
+    // eslint-disable-next-line
+  }, [estates])
+
 
   return (
     <>
@@ -42,7 +59,7 @@ function MyComponent({ draggableMarker, size, center, latlng, setLatLng, estateA
           }}
           mapContainerStyle={containerStyle}
           center={center}
-          zoom={11}
+          zoom={14}
         >
           {draggableMarker ? (
             <Marker
@@ -53,9 +70,7 @@ function MyComponent({ draggableMarker, size, center, latlng, setLatLng, estateA
               icon={icon}
             />
           ) : (
-            tmp.map((e) => (
-              <Marker key={e.position.lat} icon={icon} onClick={() => console.log(e.text)} position={e.position} />
-            ))
+            estates.map((e) => <Marker key={e.latlng.lat} icon={icon} position={e.latlng} />)
           )}
         </GoogleMap>
       </LoadScript>

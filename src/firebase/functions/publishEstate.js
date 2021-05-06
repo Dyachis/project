@@ -1,6 +1,6 @@
 import { storage, firestore } from '../firebase'
 
-export default function publishEstate(e, user, latlng){
+export default function publishEstate(e, profile, latlng) {
   let rentObj = {}
   const file = e.target.file.files[0]
 
@@ -10,22 +10,22 @@ export default function publishEstate(e, user, latlng){
     .then(async () => {
       const url = await storageRef.getDownloadURL()
       const obj = {
-        latlng: {lat: latlng.lat,lng: latlng.lng},
+        latlng: { lat: latlng.lat, lng: latlng.lng },
         city: e.target.city.value,
         area: e.target.area.value,
         bads: e.target.bads.value,
         baths: e.target.baths.value,
-        email: user.email,
-        img: [url,],
+        email: profile.email,
+        img: [url],
         name: e.target.name.value,
         price: e.target.price.value,
-        uid: user.uid,
-        owner: `${user.name} ${user.lastname}`
-      };
+        uid: profile.id,
+        owner: `${profile.name} ${profile.lastname}`,
+      }
       rentObj = obj
-    }).then(() => {
-      const estateRef = firestore
-      .collection('rent-estates').doc()
+    })
+    .then(() => {
+      const estateRef = firestore.collection('rent-estates').doc()
       estateRef.set(rentObj)
     })
 }
