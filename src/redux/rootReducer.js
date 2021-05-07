@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
-import pseudoServer from './pseudo-server/pseudoServerReducer'
+import findReducer from './findStorage/findReducer';
 
 
 export default combineReducers({
-    server: pseudoServer
+    arr:findReducer
 });
