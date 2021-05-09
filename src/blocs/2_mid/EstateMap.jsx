@@ -14,6 +14,8 @@ function EstateMap({arr,addArr}) {
 
     const { estates } = EstateHook(null)
     const [estatesOnBounds, setEstatesOnBounds] = useState(estates)
+    // console.log(estates);
+    // console.log(estatesOnBounds);
     
     const [latLng, setLatLang] = useState({ lat: 32.79, lng: 35.03 })
     
@@ -21,10 +23,10 @@ function EstateMap({arr,addArr}) {
   return (
     <EstateMapContainter>
       <PopularCities changeCenter={setLatLang} />
-      <FindForm arr={arr} addArr={addArr}/>
+      <FindForm arrSearch={arr} addArr={addArr}/>
       <div className='section'>
         <VerticalScroll arr={estatesOnBounds} />
-        <Map center={latLng} size={{ width: '830px', height: '940px' }} estates={estates} setEstatesOnBounds={setEstatesOnBounds} />
+        <Map center={latLng} size={{ width: '830px', height: '940px' }} estates={estates} setEstatesOnBounds={setEstatesOnBounds} arrSearch={arr}/>
       </div>
     </EstateMapContainter>
   )

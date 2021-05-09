@@ -7,8 +7,8 @@ import FormPrice from '../../components/form/FormPrice';
 import FormRooms from '../../components/form/FormRooms';
 import InputButton from '../../blocs/style/InputButton';
 
-function FindForm({arr,addArr}) {
-    console.log(arr);
+function FindForm({arrSearch,addArr}) {
+    console.log(arrSearch);
     return <>
         <FindFormContainer>
             <form action="#" onSubmit={(e) => Finder(e, addArr)}>
@@ -43,21 +43,28 @@ function Finder(e, addPost) {
         arr:{
             city: e.target.city.value,
             price: e.target.range.value,
+            
+            type: 
+            (e.target.apt.checked ? 'apt' : "") + 
+            (e.target.house.checked ? ',house' : "") + 
+            (e.target.sublet.checked ? ',sublet' : "") + 
+            (e.target.duplex.checked ? ',duplex' : "") + 
+            (e.target.loft.checked ? ',loft' : ""), 
 
-            apt:e.target.apt.checked,
-            house:e.target.house.checked,
-            sublet:e.target.sublet.checked,
-            duplex:e.target.duplex.checked,
-            loft:e.target.loft.checked,
-
-            one:e.target.oneroom.checked,
-            two:e.target.tworoom.checked,
-            three:e.target.threeroom.checked,
-            four:e.target.fourroom.checked,
-            five:e.target.fiveroom.checked,
+            rooms:
+            (e.target.oneroom.checked ? '1' : '') +
+            (e.target.tworoom.checked ? ',2' : '') +
+            (e.target.threeroom.checked ? ',3' : '') +
+            (e.target.fourroom.checked ? ',4' : '') +
+            (e.target.fiveroom.checked ? ',5' : '')
+            // one:e.target.oneroom.checked,
+            // two:e.target.tworoom.checked,
+            // three:e.target.threeroom.checked,
+            // four:e.target.fourroom.checked,
+            // five:e.target.fiveroom.checked,
         }
     });
-    
+
     // console.log(
     //     e.target.city.value,
     //     e.target.range.value,

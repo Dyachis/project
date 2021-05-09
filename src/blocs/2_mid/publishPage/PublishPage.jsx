@@ -16,7 +16,7 @@ export default function PublishPage() {
   const history = useHistory()
 
   const [name, setName] = useState(false)
-  const [bads, setBads] = useState(false)
+  const [rooms, setRooms] = useState(false)
   const [baths, setBaths] = useState(false)
   const [area, setArea] = useState(false)
   const [price, setPrice] = useState(false)
@@ -26,8 +26,8 @@ export default function PublishPage() {
     e.preventDefault()
     if (e.target.name.value === '') return setName(true)
     else setName(false)
-    if (e.target.bads.value === '') return setBads(true)
-    else setBads(false)
+    if (e.target.rooms.value === '') return setRooms(true)
+    else setRooms(false)
     if (e.target.baths.value === '') return setBaths(true)
     else setBaths(false)
     if (e.target.area.value === '') return setArea(true)
@@ -36,7 +36,7 @@ export default function PublishPage() {
     else setPrice(false)
     if (e.target.file.value === '') return setFile(true)
     else setFile(false)
-    if (![name, bads, baths, area, price].includes(true)) {
+    if (![name, rooms, baths, area, price].includes(true)) {
     } else {
       console.log('Submitted')
       publishEstate(e, profile, latlng)
@@ -67,8 +67,8 @@ export default function PublishPage() {
           <input name='name' id='name' type='text' style={{ border: name && '1px solid red' }} />
         </div>
         <div htmlFor='form'>
-          <label htmlFor='bads'>Bads</label>
-          <input id='bads' name='bads' type='number' style={{ border: bads && '1px solid red' }} />
+          <label htmlFor='rooms'>Rooms</label>
+          <input id='rooms' name='rooms' type='number' style={{ border: rooms && '1px solid red' }} />
         </div>
         <div htmlFor='form'>
           <label htmlFor='baths'>Baths</label>
