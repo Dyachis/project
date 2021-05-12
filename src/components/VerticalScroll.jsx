@@ -15,7 +15,7 @@ export default function VS({ arr }){
                     <div className='payload'>
                         <div className='name'>{e.name}</div>
                         <div className='area'><img src={area} alt=""/>{e.area} m²</div>
-                        <div className='bads'><img src={bad} alt=""/>{e.bads} bads</div>
+                        <div className='bads'><img src={bad} alt=""/>{e.rooms} rooms</div>
                         <div className='baths'><img src={bath} alt=""/>{e.baths} baths</div>
                         <div className='price'>₪ {e.price}</div>
                     </div>
