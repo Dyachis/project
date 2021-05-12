@@ -49,17 +49,9 @@ export default function PublishPage() {
   const [center, setCenter] = useState({ lat: 59.95, lng: 30.33 })
   const [latlng, setLatLng] = useState({ lat: 59.95, lng: 30.33 })
 
-  function log(e){
-    e.preventDefault()
-    console.log(e.target.file.files[1]);
-  }
 
   return (
     <EditContainer>
-      <form onSubmit={log} >
-        <input name='file' type="file" multiple='multiple' />
-        <button type='submit'>LOG</button>
-      </form>
       <h1>Publish your property</h1>
       <form onSubmit={handleSubmit}>
         <div htmlFor='form'>
