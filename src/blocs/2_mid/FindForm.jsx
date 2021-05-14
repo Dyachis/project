@@ -8,7 +8,6 @@ import FormRooms from '../../components/form/FormRooms';
 import InputButton from '../../blocs/style/InputButton';
 
 function FindForm({arrSearch,addArr}) {
-    console.log(arrSearch);
     return <>
         <FindFormContainer>
             <form action="#" onSubmit={(e) => Finder(e, addArr)}>

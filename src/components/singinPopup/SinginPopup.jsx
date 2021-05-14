@@ -3,42 +3,26 @@ import SinginPopupContainer from '../../blocs/style/containers/SinginPopupContai
 
 import X from './X'
 import Login from './Login'
-import Register from './Register'
+import Register from './RFormik'
 
 export default function SinginPopup({ setPopup }) {
   let history = useHistory()
 
-  function clickHandler(e){
-    if (e.target.classList.value.includes('waffer')) {
+  function clickHandler(e) {
+    if (e.target.classList.value.includes('wafer')) {
       setPopup()
     }
   }
 
   return (
-    <SinginPopupContainer className='waffer' onClick={(e) => clickHandler(e)}>
+    <SinginPopupContainer className='wafer' onClick={(e) => clickHandler(e)}>
       <div className='popup'>
         <X history={history} setPopup={setPopup} />
         <h1>What about you?</h1>
         <div className='loginForm'>
           <Switch>
-            <Route
-              path='/home/login'
-              component={() => (
-                <Login
-                  history={history}
-                  setPopup={setPopup}
-                />
-              )}
-            />
-            <Route
-              path='/home/register'
-              component={() => (
-                <Register
-                  history={history}
-                  setPopup={setPopup}
-                />
-              )}
-            />
+            <Route path='/home/login' component={() => <Login history={history} setPopup={setPopup} />} />
+            <Route path='/home/register' component={() => <Register history={history} setPopup={setPopup} />} />
           </Switch>
         </div>
       </div>

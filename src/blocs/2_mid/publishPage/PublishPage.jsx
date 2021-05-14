@@ -4,7 +4,6 @@ import { useAuth } from '../../../context/AuthContext'
 import { useState } from 'react'
 import { useHistory } from 'react-router'
 
-// import Map from '../../../components/PlacePickMap'
 import Map from '../../../components/Map'
 import Select from 'react-select'
 import options from '../../../components/form/SelectOptions'
