@@ -19,7 +19,7 @@ const Popup = styled.div`
         right: 0; 
         margin: 100px auto;
         width: 900px;
-        height: 500px;
+        min-height: 500px;
         text-align: center;
         z-index: 110;
         background-color: ${color.main};
@@ -38,11 +38,13 @@ const Popup = styled.div`
         display: flex;
         flex-direction: column;
         width: 400px;
-        height: 270px;
+        min-height: 270px;
         justify-content: space-between;
     }
 
     .loginForm form input{
+        margin: 10px 0 15px;
+        
         background-color: ${color.main};
         border: none;
         border-bottom: 3px solid #fff;
@@ -60,6 +62,16 @@ const Popup = styled.div`
     h1{
         color: #fff;
         font-weight: normal;
+    }
+
+    h4{
+        text-decoration: underline;
+        text-decoration-color: #ff0000;
+    }
+
+    label {
+        color: #fff;
+        text-align: start;
     }
 
     .x{
@@ -83,6 +95,7 @@ const Popup = styled.div`
 
     p{
         color: #fff;
+        margin: 15px 0;
     }
 
     a:visited{

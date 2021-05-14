@@ -4,7 +4,6 @@ import { useAuth } from '../../../context/AuthContext'
 import { useState } from 'react'
 import { useHistory } from 'react-router'
 
-// import Map from '../../../components/PlacePickMap'
 import Map from '../../../components/Map'
 import Select from 'react-select'
 import options from '../../../components/form/SelectOptions'
@@ -49,17 +48,9 @@ export default function PublishPage() {
   const [center, setCenter] = useState({ lat: 59.95, lng: 30.33 })
   const [latlng, setLatLng] = useState({ lat: 59.95, lng: 30.33 })
 
-  function log(e){
-    e.preventDefault()
-    console.log(e.target.file.files[1]);
-  }
 
   return (
     <EditContainer>
-      <form onSubmit={log} >
-        <input name='file' type="file" multiple='multiple' />
-        <button type='submit'>LOG</button>
-      </form>
       <h1>Publish your property</h1>
       <form onSubmit={handleSubmit}>
         <div htmlFor='form'>

@@ -39,6 +39,10 @@ const RentInfo = styled.div`
         margin-left: 10px;
     }
 
+    .payload img {
+        margin-right: 10px;
+    }
+
     img{
         height: 16px;
         width: 16px;
