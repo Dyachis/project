@@ -11,22 +11,17 @@ import {connect} from 'react-redux';
 import * as Actions from '../../redux/findStorage/actionCreator'
 
 function EstateMap({arr,addArr}) {
-
     const { estates } = EstateHook(null)
     const [estatesOnBounds, setEstatesOnBounds] = useState(estates)
-    // console.log(estates);
-    // console.log(estatesOnBounds);
-    
-    const [latLng, setLatLang] = useState({ lat: 32.79, lng: 35.03 })
-    
-    
+    const [latLng, setLatLang] = useState({ lat: 32.81, lng: 34.98 })
+        
   return (
     <EstateMapContainter>
       <PopularCities changeCenter={setLatLang} />
       <FindForm arrSearch={arr} addArr={addArr}/>
       <div className='section'>
         <VerticalScroll arr={estatesOnBounds} />
-        <Map center={latLng} size={{ width: '830px', height: '940px' }} estates={estates} setEstatesOnBounds={setEstatesOnBounds} arrSearch={arr}/>
+        <Map center={latLng} size={{ width: '830px', height: '940px' }} estates={estates} setEstatesOnBounds={setEstatesOnBounds} arrSearch={arr} />
       </div>
     </EstateMapContainter>
   )

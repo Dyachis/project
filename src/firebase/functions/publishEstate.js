@@ -12,7 +12,8 @@ export default function publishEstate(e, profile, latlng) {
       const obj = {
         latlng: { lat: latlng.lat, lng: latlng.lng },
         city: e.target.city.value,
-        type: e.target.type.value || 'apt',
+        // type: e.target.type.value || 'apt',
+        type: 'apt',
         area: e.target.area.value,
         rooms: e.target.rooms.value,
         baths: e.target.baths.value,

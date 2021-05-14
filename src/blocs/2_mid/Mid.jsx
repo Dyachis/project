@@ -1,5 +1,4 @@
 import { Switch, Route, Redirect, useHistory } from 'react-router-dom'
-import { useState } from 'react'
 
 import Contact from './emptyPages/Contact'
 import Faq from './emptyPages/Faq'
@@ -12,14 +11,13 @@ import EstatePage from './estatePage/EstatePage'
 import PublishPage from './publishPage/PublishPage'
 
 export default function Md() {
-  const [showWelcomeSection, setWelcomeSection] = useState(true)
   let history = useHistory()
 
   return (
     <Mid>
       <Switch>
         <Route path='/home'>
-          <WelcomeSection showWelcomeSection={showWelcomeSection} setWelcomeSection={setWelcomeSection} />
+          <WelcomeSection />
           <EstateMap />
         </Route>
         <Route path='/profile/publish' exact component={PublishPage} />

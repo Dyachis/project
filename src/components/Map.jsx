@@ -6,7 +6,7 @@ let delay
 
 function Map({ draggableMarker, size, center, latlng, setLatLng, estates, setEstatesOnBounds, arrSearch }) {
   const mapRef = useRef(null)
-
+  
   const containerStyle = {
     width: size.width,
     height: size.height,
@@ -21,20 +21,21 @@ function Map({ draggableMarker, size, center, latlng, setLatLng, estates, setEst
     mapRef.current = map
   }
 
+  handleCenterChanged()
+
   function handleCenterChanged() {
     clearTimeout(delay)
     if (!draggableMarker) {
       if (!mapRef.current) return
       delay = setTimeout(() => {
         setEstatesOnBounds(checkIfEstateInBounds())
-      }, 1000)
+      }, 200)
     }
   }
 
   function checkIfEstateInBounds() {
     if (draggableMarker) return
     let tmp = estates.filter((e) => mapRef.current.getBounds().contains(e.latlng) === true)
-    console.log(tmp);
     if(arrSearch.arr.city !== undefined && arrSearch.arr.city !== "") tmp = tmp.filter(e => e.city === arrSearch.arr.city)
     if(arrSearch.arr.price !== undefined) {
       let range = arrSearch.arr.price.split(',');
@@ -42,12 +43,12 @@ function Map({ draggableMarker, size, center, latlng, setLatLng, estates, setEst
     }
     if(arrSearch.arr.type !== undefined && arrSearch.arr.type !== ""){
       let typeT = arrSearch.arr.type.split(',');
-      console.log(typeT);
+      // console.log(typeT);
       tmp = tmp.filter(e => e.type === typeT[0] || e.type === typeT[1] || e.type === typeT[2] || e.type === typeT[3] || e.type === typeT[4])
     }
     if(arrSearch.arr.rooms !== undefined && arrSearch.arr.rooms !== ""){
       let roomsT = arrSearch.arr.rooms.split(',');
-      console.log(roomsT);
+      // console.log(roomsT);
       tmp = tmp.filter(e => e.rooms === roomsT[0] || e.rooms === roomsT[1] || e.rooms === roomsT[2] || e.rooms === roomsT[3] || e.rooms === roomsT[4])
     }
     return tmp

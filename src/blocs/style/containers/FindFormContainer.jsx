@@ -11,14 +11,14 @@ const FindFormContainer = styled.div`
          color: ${color.main};
     }
     
-    ul{
+    .formul {
         list-style: none;
         display: flex;
         justify-content: space-between;
         color: ${color.main};
     }
 
-    ul li:nth-child(n+2){
+    .formul li:nth-child(n+2){
         width: 150px;
         height: 50px;
         // margin-left: 10px;
@@ -75,24 +75,7 @@ const FindFormContainer = styled.div`
         background-color: ${color.main};
         color: white;
         width: 350px;
-        height: 150px;
-      }
-
-      .dropdown-content .boxes ul{
-        display: flex;
-        color: white;
-        margin-top: 7px;
-      }
-      
-      .dropdown-content .boxes ul li input{
-        width: 100px;
-      }
-
-      .dropdown-content .boxes ul li{
-        width: 100%;
-        border: 0px;
-        text-align: left;
-        font-weight: lighter;
+        height: 125px;
       }
 
       //-----------------------------------------------[↑Price↑]-------------------------------------------------------
@@ -220,8 +203,8 @@ const FindFormContainer = styled.div`
         border-radius: 5px;
         background-color: ${color.main};
         color: white;
-        width: 200px;
-        height: 175px;
+        width: 211px;
+        height: 365px;
       }
       
       .dropdown .strelka-dates{

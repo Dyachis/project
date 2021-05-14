@@ -1,30 +1,32 @@
-import FindFormContainer from '../style/containers/FindFormContainer';
-import React from 'react';
+import React, { useState } from 'react';
 import Select from 'react-select';
 import options from '../../components/form/SelectOptions';
+
 import FormType from '../../components/form/FormType';
 import FormPrice from '../../components/form/FormPrice';
 import FormRooms from '../../components/form/FormRooms';
+import FormData from '../../components/form/FormData';
+
+import FindFormContainer from '../style/containers/FindFormContainer';
 import InputButton from '../../blocs/style/InputButton';
 
 function FindForm({arrSearch,addArr}) {
-    console.log(arrSearch);
+    const [state, setState] = useState([
+        {
+            startDate: new Date(),
+            endDate: new Date(),
+            key: 'selection'
+        }
+    ]);
     return <>
         <FindFormContainer>
-            <form action="#" onSubmit={(e) => Finder(e, addArr)}>
-                <ul>
+            <form action="#" onSubmit={(e) => Finder(e, addArr, state)}>
+                <ul className='formul'>
                 <li><Select options={options} placeholder={'Enter city...'} className={'cityfield'} name='city' styles={{input: styles => ({ ...styles, minHeight: '40px' })}}/></li>
                     <FormPrice />
                     <FormType />
                     <FormRooms/>
-                    <li className="dropdown">
-                        <div className="dropbtn">Dates</div>
-                        <div className="dropdown-content-dates">
-                            <div className='strelka-dates'>&#9650;</div>
-                            <input type="date" name="date" />
-                            {/* ----- Вставь сюда календарь ----- */}
-                        </div>
-                    </li>
+                    <FormData state={state} setState={setState}/>
                     <InputButton>
                     Search
                     <input className='search' type="submit" value="Search" />
@@ -37,9 +39,9 @@ function FindForm({arrSearch,addArr}) {
     </>
 }
 
-function Finder(e, addPost) {
+function Finder(e, addArr, state) {
     e.preventDefault();
-    addPost({
+    addArr({
         arr:{
             city: e.target.city.value,
             price: e.target.range.value,
@@ -56,31 +58,11 @@ function Finder(e, addPost) {
             (e.target.tworoom.checked ? ',2' : '') +
             (e.target.threeroom.checked ? ',3' : '') +
             (e.target.fourroom.checked ? ',4' : '') +
-            (e.target.fiveroom.checked ? ',5' : '')
-            // one:e.target.oneroom.checked,
-            // two:e.target.tworoom.checked,
-            // three:e.target.threeroom.checked,
-            // four:e.target.fourroom.checked,
-            // five:e.target.fiveroom.checked,
+            (e.target.fiveroom.checked ? ',5' : ''),
+
+            date: state,
         }
     });
-
-    // console.log(
-    //     e.target.city.value,
-    //     e.target.range.value,
-    //     ' Types: ',
-    //     e.target.apt.checked,
-    //     e.target.house.checked,
-    //     e.target.sublet.checked,
-    //     e.target.duplex.checked,
-    //     e.target.loft.checked,
-    //     ' Rooms: ',
-    //     e.target.oneroom.checked,
-    //     e.target.tworoom.checked,
-    //     e.target.threeroom.checked,
-    //     e.target.fourroom.checked,
-    //     e.target.fiveroom.checked,
-    //     );
-    }
+}
     
 export default FindForm;
