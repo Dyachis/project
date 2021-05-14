@@ -38,8 +38,8 @@ export default function RFormik({ setPopup, history }) {
     >
       {(props) => (
         <Form>
-          <CustomTextInput label='Email' name='email' type='text' placeholder='Email' />
-          <CustomTextInput label='Password' name='password' type='text' placeholder='Password' />
+          <CustomTextInput label='Email' name='email' type='text' placeholder='Email' autocomplete='off'/>
+          <CustomTextInput label='Password' name='password' type='password' placeholder='Password' />
           {error && <h4>'Incorrect login or password!'</h4>}
           <div className='btns'>
             <Button

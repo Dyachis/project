@@ -48,11 +48,11 @@ export default function RFormik({ setPopup, history }) {
     >
       {(props) => (
         <Form>
-          <CustomTextInput label='Email' name='email' type='email' placeholder='Email' />
-          <CustomTextInput label='Password' name='password' type='password' placeholder='Password' />
-          <CustomTextInput label='Name' name='name' type='text' placeholder='Name' />
-          <CustomTextInput label='Lastname' name='lastname' type='text' placeholder='Lastname' />
-          <CustomTextInput label='Information' name='info' type='text' placeholder='Information about yourself' />
+          <CustomTextInput label='Email' name='email' type='email' placeholder='Email' autocomplete='off'/>
+          <CustomTextInput label='Password' name='password' type='password' placeholder='Password' autocomplete='off'/>
+          <CustomTextInput label='Name' name='name' type='text' placeholder='Name' autocomplete='off'/>
+          <CustomTextInput label='Lastname' name='lastname' type='text' placeholder='Lastname' autocomplete='off'/>
+          <CustomTextInput label='Information' name='info' type='text' placeholder='Information about yourself' autocomplete='off'/>
           <input type='file' onChange={(e) => setFile(e.target.files[0])} />
           {error && <h4>'Incorrect login or password!'</h4>}
           <p>
