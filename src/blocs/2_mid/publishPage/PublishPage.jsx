@@ -14,35 +14,45 @@ export default function PublishPage() {
   const { profile } = UserFireHook(currentUser.email)
   const history = useHistory()
 
-  const [name, setName] = useState(false)
-  const [rooms, setRooms] = useState(false)
-  const [baths, setBaths] = useState(false)
-  const [area, setArea] = useState(false)
-  const [price, setPrice] = useState(false)
-  const [file, setFile] = useState(false)
+  const [name, setName] = useState(true)
+  const [rooms, setRooms] = useState(true)
+  const [baths, setBaths] = useState(true)
+  const [area, setArea] = useState(true)
+  const [price, setPrice] = useState(true)
+  const [file, setFile] = useState(true)
+  
+  console.log(
+    name,rooms,baths,area,price,file
+  );
 
   function handleSubmit(e) {
+    EmptyInputsChecker(e)
     e.preventDefault()
-    if (e.target.name.value === '') return setName(true)
-    else setName(false)
-    if (e.target.rooms.value === '') return setRooms(true)
-    else setRooms(false)
-    if (e.target.baths.value === '') return setBaths(true)
-    else setBaths(false)
-    if (e.target.area.value === '') return setArea(true)
-    else setArea(false)
-    if (e.target.price.value === '') return setPrice(true)
-    else setPrice(false)
-    if (e.target.file.value === '') return setFile(true)
-    else setFile(false)
-    if (![name, rooms, baths, area, price].includes(true)) {
+    if ([name, rooms, baths, area, price].includes(true)) {
+      console.log('Not submitted');
     } else {
       console.log('Submitted')
-      publishEstate(e, profile, latlng)
-      setTimeout(() => {
-        history.push('/profile')
-      }, 3000)
+      // publishEstate(e, profile, latlng)
+      // setTimeout(() => {
+      //   history.push('/profile')
+      // }, 3000)
     }
+  }
+
+  function EmptyInputsChecker(e){
+    console.log(e.target.name);
+    if (e.target.name === 'name' && e.target.value !== '') setName(false)
+    else if(e.target.name === 'name' && e.target.name.value === '') setName(true)
+    if (e.target.name === 'rooms' && e.target.value !== '') setRooms(false)
+    else if(e.target.name === 'rooms' && e.target.value === '') setRooms(true)
+    if (e.target.name === 'baths' && e.target.value !== '') setBaths(false)
+    else if (e.target.name === 'baths' && e.target.value === '') setBaths(true)
+    if (e.target.name === 'area' && e.target.value !== '') setArea(false)
+    else if (e.target.name === 'area' && e.target.value === '') setArea(true)
+    if (e.target.name === 'price' && e.target.value !== '') setPrice(false)
+    else if(e.target.name === 'price' && e.target.value === '') setPrice(true)
+    if (e.target.name === 'file' && e.target.value !== '') setFile(false)
+    else if(e.target.name === 'file' && e.target.value === '') setFile(true)
   }
 
   const [center, setCenter] = useState({ lat: 59.95, lng: 30.33 })
@@ -55,30 +65,30 @@ export default function PublishPage() {
       <form onSubmit={handleSubmit}>
         <div htmlFor='form'>
           <label htmlFor='name'>Name</label>
-          <input name='name' id='name' type='text' style={{ border: name && '1px solid red' }} />
+          <input name='name' id='name' type='text' onChange={EmptyInputsChecker}/>
         </div>
         <div htmlFor='form'>
           <label htmlFor='rooms'>Rooms</label>
-          <input id='rooms' name='rooms' type='number' style={{ border: rooms && '1px solid red' }} />
+          <input id='rooms' name='rooms' type='number' onChange={EmptyInputsChecker}/>
         </div>
         <div htmlFor='form'>
           <label htmlFor='baths'>Baths</label>
-          <input id='baths' name='baths' type='number' style={{ border: baths && '1px solid red' }} />
+          <input id='baths' name='baths' type='number' onChange={EmptyInputsChecker}/>
         </div>
         <div htmlFor='form'>
           <label htmlFor='area'>Area</label>
-          <input id='area' name='area' type='number' style={{ border: area && '1px solid red' }} />
+          <input id='area' name='area' type='number' onChange={EmptyInputsChecker}/>
         </div>
         <div htmlFor='form'>
           <label htmlFor='price'>Price</label>
-          <input id='price' name='price' type='number' style={{ border: price && '1px solid red' }} />
+          <input id='price' name='price' type='number' onChange={EmptyInputsChecker}/>
         </div>
         <div htmlFor='form'>
           <label htmlFor='file'>Img</label>
-          <input id='file' name='file' type='file' multiple style={{ border: file && '1px solid red' }} />
+          <input id='file' name='file' type='file' onChange={EmptyInputsChecker}/>
         </div>
         <div htmlFor='form'>
-          <input type='submit' value='Submit' />
+          <input type='submit' value='Submit' onChange={EmptyInputsChecker}/>
         </div>
         <div className='city'>
           <Select
