@@ -5,8 +5,10 @@ const Container = styled.section`
   padding: 60px 277px;
 
   form {
+    border-radius: 5px;
+    width: 550px;
     display: flex;
-    /* flex-direction: column; */
+    background-color: ${color.main}
   }
 
   .search{
@@ -23,19 +25,31 @@ const Container = styled.section`
   }
 
   form ul li{
-    margin-top: 20px
+    margin: 35px 0 0 20px;
+  }
+
+  form ul li:last-child{
+    margin: 27px 0 0 20px;
+  }
+
+  form ul li label{
+    font-size: 33px;
   }
 
   form input{
-    height: 25px;
+    height: 30px;
+    width: 250px;
+    border-radius: 5px;
+    border: 0px;
+    font-size: 17px;
+    padding: 0 0 0 5px;
   }
 
   form *[for^="form"]{
     width: 500px;
     display: flex;
     justify-content: space-between;
-    color: black;
-    /* border: 1px solid red; */
+    color: white;
   }
 
   h1 {
@@ -50,14 +64,20 @@ const Container = styled.section`
 
   .cityfield{
     height: 50px;
-    /* margin: 20px 0; */
+    margin-bottom: 20px;
     width: 900px;
   }
 
   .cityfield div{
     flex-direction: linear;
   }
-  
+
+  .fileinp {
+    height: 65px;
+    width: 200px;
+    background-color: white;
+    opacity: 0;
+}
 `
 
 export default Container

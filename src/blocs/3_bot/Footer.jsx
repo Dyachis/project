@@ -35,7 +35,7 @@ function Footer() {
             <div>
                 <img src={twitter} alt='twitter' />
                 <img src={facebook} alt='facebook' />
-                <h4>2019, Rent Me LTD</h4>
+                <h4>2021, Rent Me LTD</h4>
             </div>
         </FooterContainer>
     );

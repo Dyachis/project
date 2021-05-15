@@ -38,7 +38,7 @@ export default function PublishPage() {
       publishEstate(e, profile, latlng)
       setTimeout(() => {
         history.push('/profile')
-      }, 3000)
+      }, 1000)
     }
   }
 
@@ -67,37 +67,61 @@ export default function PublishPage() {
       <form onSubmit={handleSubmit}>
         <ul>
         <li htmlFor='form'>
-          <label htmlFor='name'>Name</label>
-          <input name='name' id='name' type='text' onChange={EmptyInputsChecker}/>
+          <label htmlFor='name' >Name</label>
+          <input name='name' id='name' type='text' onChange={EmptyInputsChecker} placeholder="Type estate name here..."/>
         </li>
         <li htmlFor='form'>
-          <label htmlFor='rooms'>Rooms</label>
-          <input id='rooms' name='rooms' type='number' onChange={EmptyInputsChecker}/>
+          <label htmlFor='rooms' >Rooms</label>
+          {/* <input id='rooms' name='rooms' type='number' className='roomsI' onChange={EmptyInputsChecker} placeholder="Type number of rooms here..."/> */}
+          <input id='rooms' name='rooms' type='number' onChange={EmptyInputsChecker} placeholder="Type number of rooms here..."/>
         </li>
         <li htmlFor='form'>
-          <label htmlFor='baths'>Baths</label>
-          <input id='baths' name='baths' type='number' onChange={EmptyInputsChecker}/>
+          <label htmlFor='baths' >Baths</label>
+          <input id='baths' name='baths' type='number' onChange={EmptyInputsChecker} placeholder="Type number of baths here..."/>
         </li>
         <li htmlFor='form'>
-          <label htmlFor='area'>Area</label>
-          <input id='area' name='area' type='number' onChange={EmptyInputsChecker}/>
+          <label htmlFor='area' >Area</label>
+          <input id='area' name='area' type='number' onChange={EmptyInputsChecker} placeholder="Type apartment area here..."/>
         </li>
         <li htmlFor='form'>
-          <label htmlFor='price'>Price</label>
-          <input id='price' name='price' type='number' onChange={EmptyInputsChecker}/>
+          <label htmlFor='price' >Price</label>
+          <input id='price' name='price' type='number' onChange={EmptyInputsChecker} placeholder="Type price here..."/>
         </li>
         <li htmlFor='form'>
-          <label htmlFor='file'>Img</label>
-          <input id='file' name='file' type='file' onChange={EmptyInputsChecker} multiple='on'/>
+          <label htmlFor='file' >Images</label>
+          <div className='filecont' style={{
+            background: 'white',
+            height: '65px',
+            borderRadius: '5px',
+
+            }}>
+            <label style={{
+              position:'absolute',
+              color: '#0F4C81',
+              fontSize: '20px',
+              right: '1128px',
+              top: '692px'
+              }}>
+                Drag and Drop
+              </label>
+            <label style={{
+              position:'absolute',
+              color: '#0F4C81',
+              fontSize: '20px',
+              right: '1143px',
+              top: '714px'
+              }}>
+                Or just Click
+              </label>
+
+            <input id='file' name='file' type='file' onChange={EmptyInputsChecker} multiple='on' className='fileinp'/>
+          </div>
         </li>
-        {/* <li htmlFor='form'> */}
-          {/* <InputButton> */}
-            {/* Search */}
-            {/* <input className='search' type="submit" value="Search" /> */}
-          {/* </InputButton> */}
-        {/* </li> */}
         <li htmlFor='form'>
-          <input type='submit' value='Submit' onChange={EmptyInputsChecker}/>
+          <InputButton primary>
+            Publish
+            <button className='search' type="submit" value="Search" />
+          </InputButton>
         </li>
         </ul>
         <div className='city'>

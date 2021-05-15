@@ -6,7 +6,7 @@ import san_francisco from '../../../assets/img/san_francisco.png'
 import tel_aviv from '../../../assets/img/tel_aviv.png'
 
 const PopularCitiesContainer = styled.div`
-    padding: 60px 0 ;
+    padding: 30px 0 ;
 
     h1{
         text-align: center;
@@ -23,7 +23,7 @@ const PopularCitiesContainer = styled.div`
         width: 320px;
         height: 250px;
         border-radius: 5px;
-        margin-top: 60px;
+        margin-top: 30px;
         padding: 20px;
         display: flex;
         flex-direction: column-reverse;

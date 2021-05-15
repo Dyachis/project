@@ -9,6 +9,11 @@ const RentInfo = styled.div`
     font-size: 18px;
     width: 904px;
 
+    .delBtn{
+        font-size: 0;
+        opacity: 0;
+    }
+
     .payload{
         margin-top: 20px;
         display: grid;

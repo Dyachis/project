@@ -53,7 +53,34 @@ export default function RFormik({ setPopup, history }) {
           <CustomTextInput label='Name' name='name' type='text' placeholder='Name' autocomplete='off'/>
           <CustomTextInput label='Lastname' name='lastname' type='text' placeholder='Lastname' autocomplete='off'/>
           <CustomTextInput label='Information' name='info' type='text' placeholder='Information about yourself' autocomplete='off'/>
-          <input type='file' onChange={(e) => setFile(e.target.files[0])} />
+          {/* <input type='file' onChange={(e) => setFile(e.target.files[0])} /> */}
+          <label htmlFor='file' >Images</label>
+          <div className='filecont' style={{
+            background: 'white',
+            height: '65px',
+            borderRadius: '5px',
+            }}>
+            <label style={{
+              width: '300px',
+              position:'absolute',
+              color: '#0F4C81',
+              fontSize: '20px',
+              right: '290px',
+              top: '595px'
+              }}>
+                Drag and Drop Or just Click
+              </label>
+
+
+            <input id='file' name='file' type='file' multiple='on' className='fileinp' style={{
+                  height: '65px',
+                  width: '400px',
+                  margin: '0',
+                  backgroundColor: 'gray',
+                  opacity: '0',
+                  cursor:'pointer'
+            }}/>
+          </div>
           {error && <h4>'Incorrect login or password!'</h4>}
           <p>
             Already have an account? <Link to='/home/login'>Sing in</Link>

@@ -4,6 +4,10 @@ import color from '../../../assets/color/color'
 const EstatePageContainer = styled.section`
   padding: 60px 277px;
 
+  .mapcont{
+    margin-top: 60px;
+  }
+
   h1 {
     color: ${color.main};
     font-weight: normal;

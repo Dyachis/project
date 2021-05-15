@@ -42,7 +42,7 @@ export default function RntInfo({ estate, estateId }) {
         </div>
         <div className='price'>₪ {estate.price}</div>
       </div>
-      <button onClick={del}>Delete</button>
+      <Button primary onClick={del}>Delete</Button>
     </RentInfo>
   )
 }
