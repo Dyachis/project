@@ -35,7 +35,7 @@ export default function MenuIfNoLogedIn({
                     setPopup(!shownPopup)
                   }}
                 >
-                  Sing in
+                  Sign in
                 </Button>
               </Link>
             </li>

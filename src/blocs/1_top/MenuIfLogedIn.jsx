@@ -29,7 +29,7 @@ export default function MenuIfLogedIn({ showMenu, logout }) {
             <li>
               <Link to='/home/register'>
                 <Button primary onClick={logout}>
-                  Sing out
+                  Sign out
                 </Button>
               </Link>
             </li>

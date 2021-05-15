@@ -34,7 +34,7 @@ export default function RntInfo({ estate, estateId }) {
         </div>
         <div className='bads'>
           <img src={bad} alt='' />
-          {estate.rooms} bads
+          {estate.rooms} beds
         </div>
         <div className='baths'>
           <img src={bath} alt='' />
