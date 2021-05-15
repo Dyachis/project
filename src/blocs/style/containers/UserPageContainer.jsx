@@ -43,5 +43,12 @@ const UserPageContainer = styled.div`
         width: inherit;
     }
 
+    input{
+        border: 1px solid ${color.main};
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 15px;
+    }
+
 `
 export default UserPageContainer
