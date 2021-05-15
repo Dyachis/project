@@ -6,7 +6,24 @@ const Container = styled.section`
 
   form {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
+  }
+
+  .search{
+    font-size: 0px;
+    opacity: 0;
+  }
+    
+  .search:hover {
+    cursor:pointer;
+  }
+
+  form ul{
+    list-style: none;
+  }
+
+  form ul li{
+    margin-top: 20px
   }
 
   form input{
@@ -17,6 +34,8 @@ const Container = styled.section`
     width: 500px;
     display: flex;
     justify-content: space-between;
+    color: black;
+    /* border: 1px solid red; */
   }
 
   h1 {
@@ -25,10 +44,14 @@ const Container = styled.section`
     margin-bottom: 60px;
   }
 
+  .city{
+    margin-left: 100px;
+  }
+
   .cityfield{
     height: 50px;
-    margin: 20px 0;
-    width: 500px;
+    /* margin: 20px 0; */
+    width: 900px;
   }
 
   .cityfield div{

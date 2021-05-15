@@ -1,4 +1,6 @@
 import EditContainer from '../../style/containers/EditContainer'
+import InputButton from '../../style/InputButton'
+
 import publishEstate from '../../../firebase/functions/publishEstate'
 import { useAuth } from '../../../context/AuthContext'
 import { useState } from 'react'
@@ -8,6 +10,7 @@ import Map from '../../../components/Map'
 import Select from 'react-select'
 import options from '../../../components/form/SelectOptions'
 import UserFireHook from '../../../firebase/hooks/userFireHook'
+
 
 export default function PublishPage() {
   const { currentUser } = useAuth()
@@ -28,19 +31,18 @@ export default function PublishPage() {
   function handleSubmit(e) {
     EmptyInputsChecker(e)
     e.preventDefault()
-    if ([name, rooms, baths, area, price].includes(true)) {
+    if ([name, rooms, baths, area, price, file].includes(true)) {
       console.log('Not submitted');
     } else {
       console.log('Submitted')
-      // publishEstate(e, profile, latlng)
-      // setTimeout(() => {
-      //   history.push('/profile')
-      // }, 3000)
+      publishEstate(e, profile, latlng)
+      setTimeout(() => {
+        history.push('/profile')
+      }, 3000)
     }
   }
 
   function EmptyInputsChecker(e){
-    console.log(e.target.name);
     if (e.target.name === 'name' && e.target.value !== '') setName(false)
     else if(e.target.name === 'name' && e.target.name.value === '') setName(true)
     if (e.target.name === 'rooms' && e.target.value !== '') setRooms(false)
@@ -63,33 +65,41 @@ export default function PublishPage() {
     <EditContainer>
       <h1>Publish your property</h1>
       <form onSubmit={handleSubmit}>
-        <div htmlFor='form'>
+        <ul>
+        <li htmlFor='form'>
           <label htmlFor='name'>Name</label>
           <input name='name' id='name' type='text' onChange={EmptyInputsChecker}/>
-        </div>
-        <div htmlFor='form'>
+        </li>
+        <li htmlFor='form'>
           <label htmlFor='rooms'>Rooms</label>
           <input id='rooms' name='rooms' type='number' onChange={EmptyInputsChecker}/>
-        </div>
-        <div htmlFor='form'>
+        </li>
+        <li htmlFor='form'>
           <label htmlFor='baths'>Baths</label>
           <input id='baths' name='baths' type='number' onChange={EmptyInputsChecker}/>
-        </div>
-        <div htmlFor='form'>
+        </li>
+        <li htmlFor='form'>
           <label htmlFor='area'>Area</label>
           <input id='area' name='area' type='number' onChange={EmptyInputsChecker}/>
-        </div>
-        <div htmlFor='form'>
+        </li>
+        <li htmlFor='form'>
           <label htmlFor='price'>Price</label>
           <input id='price' name='price' type='number' onChange={EmptyInputsChecker}/>
-        </div>
-        <div htmlFor='form'>
+        </li>
+        <li htmlFor='form'>
           <label htmlFor='file'>Img</label>
-          <input id='file' name='file' type='file' onChange={EmptyInputsChecker}/>
-        </div>
-        <div htmlFor='form'>
+          <input id='file' name='file' type='file' onChange={EmptyInputsChecker} multiple='on'/>
+        </li>
+        {/* <li htmlFor='form'> */}
+          {/* <InputButton> */}
+            {/* Search */}
+            {/* <input className='search' type="submit" value="Search" /> */}
+          {/* </InputButton> */}
+        {/* </li> */}
+        <li htmlFor='form'>
           <input type='submit' value='Submit' onChange={EmptyInputsChecker}/>
-        </div>
+        </li>
+        </ul>
         <div className='city'>
           <Select
             options={options}
@@ -102,14 +112,14 @@ export default function PublishPage() {
             name='city'
             styles={{ input: (styles) => ({ ...styles, minHeight: '40px' }) }}
           />
-        </div>
         <Map
           draggableMarker={true}
           center={center}
-          size={{ width: '500px', height: '500px' }}
+          size={{ width: '900px', height: '500px' }}
           latlng={latlng}
           setLatLng={setLatLng}
         />
+        </div>
       </form>
     </EditContainer>
   )
