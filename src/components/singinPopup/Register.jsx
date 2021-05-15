@@ -25,7 +25,7 @@ export default function Register({setPopup, history}){
         <input name='login' placeholder="Your login"/>
         <input name='password' type='password' placeholder="Your password"/>
         <input name='password2' type='password' placeholder="Your password Confirmation"/>
-        <p>Already have an account? <Link to='/home/login'>Sing in</Link></p>
+        <p>Already have an account? <Link to='/home/login'>Register</Link></p>
         <div className='btns'>
             <Button onClick={() => {
                 setPopup()
